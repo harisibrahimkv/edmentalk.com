@@ -58,13 +58,13 @@
         <div class="floating-circle circle-2"></div>
         <div class="container">
             <div class="about-content">
-                <div class="about-text">
+                <div class="about-text animate-on-scroll">
                     <h2>Meet <span class="text-red">Mr. Nishad</span></h2>
                     <h3>The man behind Edmen</h3>
                     <p>His path to success wasn't easygoing; it was a journey marked by overcoming obstacles and turning setbacks into valuable lessons. Every hurdle he faced became a stepping stone, shaping his approach in subsequent endeavours.</p>
                     <p>He firmly believes that by staying attuned to the surroundings, opportunities knock not just once, but continuously. Edmen stands testament to his accumulated wisdom, where each deliberate step has not only been powerful but has also paved the way for thousands of opportunities.</p>
                 </div>
-                <div class="about-image">
+                <div class="about-image animate-on-scroll delay-2">
                     <img src="assets/profile.jpg" alt="Mr. Nishad - Founder of Edmen Talk">
                 </div>
             </div>
@@ -78,7 +78,7 @@
             <p class="section-subtitle">At Edmen, our essence lies in <span class="highlight">Three fundamental operations</span></p>
 
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card animate-on-scroll">
                     <div class="service-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
                     </div>
@@ -86,7 +86,7 @@
                     <p>Building strong brands that withstand the test of the time.</p>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card animate-on-scroll delay-1">
                     <div class="service-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>
                     </div>
@@ -94,7 +94,7 @@
                     <p>Making events that everyone remembers with precise planning & boundless creativity.</p>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card animate-on-scroll delay-2">
                     <div class="service-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
                     </div>
@@ -199,19 +199,19 @@
             <p class="section-subtitle">We became the go to choice for businesses by<br><span class="highlight">Showcasing our Incomparable features</span></p>
 
             <div class="features-grid">
-                <div class="feature">
+                <div class="feature animate-on-scroll">
                     <h4>Unique Strategies</h4>
                     <p>Our strategic brilliance sets us apart. We develop compelling narrative that resonates with your audience.</p>
                 </div>
-                <div class="feature">
+                <div class="feature animate-on-scroll delay-1">
                     <h4>Creative Ingenuity</h4>
                     <p>We don't just think outside the box! We redefine it. Our creative minds are dedicated to bringing fresh, innovative ideas to the table.</p>
                 </div>
-                <div class="feature">
+                <div class="feature animate-on-scroll delay-2">
                     <h4>Traditional marketing expertise</h4>
                     <p>We employ time tested methods along with creativity and it ensures your brand stands out in the cluttered marketplace.</p>
                 </div>
-                <div class="feature">
+                <div class="feature animate-on-scroll delay-3">
                     <h4>Online campaign mastery</h4>
                     <p>Our digital marketing methodology spans across platforms, from engaging content creation to data driven ad campaigns, we develop a complete online presence for your brand.</p>
                 </div>
@@ -236,7 +236,7 @@
     <section class="mission">
         <div class="mission-bg"></div>
         <div class="container">
-            <div class="mission-content">
+            <div class="mission-content animate-on-scroll">
                 <h2>OUR MISSION</h2>
                 <p>Our mission is simple yet impactful to build mass awareness on multiple fronts through innovative communication and marketing tactics.</p>
             </div>
@@ -312,6 +312,25 @@
             } else {
                 header.classList.remove('scrolled');
             }
+        });
+
+        // Scroll-triggered animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
         });
 
         // Video controls

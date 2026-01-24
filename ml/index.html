@@ -58,13 +58,13 @@
         <div class="floating-circle circle-2"></div>
         <div class="container">
             <div class="about-content">
-                <div class="about-text">
+                <div class="about-text animate-on-scroll">
                     <h2><span class="text-red">മിസ്റ്റർ നിഷാദിനെ</span> പരിചയപ്പെടുക</h2>
                     <h3>എഡ്‌മെന്റെ പിന്നിലെ മനുഷ്യൻ</h3>
                     <p>അദ്ദേഹത്തിന്റെ വിജയത്തിലേക്കുള്ള പാത എളുപ്പമായിരുന്നില്ല; തടസ്സങ്ങളെ മറികടക്കുകയും പരാജയങ്ങളെ വിലപ്പെട്ട പാഠങ്ങളാക്കി മാറ്റുകയും ചെയ്ത ഒരു യാത്രയായിരുന്നു അത്. അദ്ദേഹം നേരിട്ട ഓരോ തടസ്സവും തുടർന്നുള്ള പ്രവർത്തനങ്ങളിൽ അദ്ദേഹത്തിന്റെ സമീപനം രൂപപ്പെടുത്തുന്ന ചവിട്ടുപടിയായി മാറി.</p>
                     <p>ചുറ്റുപാടുകളോട് ശ്രദ്ധാലുവായിരിക്കുന്നതിലൂടെ, അവസരങ്ങൾ ഒരിക്കൽ മാത്രമല്ല, തുടർച്ചയായി വാതിൽ മുട്ടുമെന്ന് അദ്ദേഹം ഉറച്ചു വിശ്വസിക്കുന്നു. എഡ്‌മെൻ അദ്ദേഹത്തിന്റെ സമാഹരിച്ച ജ്ഞാനത്തിന്റെ സാക്ഷ്യമാണ്, അവിടെ ഓരോ ബോധപൂർവമായ ചുവടും ശക്തമായിരുന്നു മാത്രമല്ല ആയിരക്കണക്കിന് അവസരങ്ങൾക്ക് വഴിയൊരുക്കുകയും ചെയ്തു.</p>
                 </div>
-                <div class="about-image">
+                <div class="about-image animate-on-scroll delay-2">
                     <img src="../assets/profile.jpg" alt="മിസ്റ്റർ നിഷാദ് - എഡ്‌മെൻ ടോക്കിന്റെ സ്ഥാപകൻ">
                 </div>
             </div>
@@ -78,7 +78,7 @@
             <p class="section-subtitle">എഡ്‌മെനിൽ, ഞങ്ങളുടെ സത്ത <span class="highlight">മൂന്ന് അടിസ്ഥാന പ്രവർത്തനങ്ങളിൽ</span> അധിഷ്ഠിതമാണ്</p>
 
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card animate-on-scroll">
                     <div class="service-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
                     </div>
@@ -86,7 +86,7 @@
                     <p>കാലത്തിന്റെ പരീക്ഷണങ്ങളെ അതിജീവിക്കുന്ന ശക്തമായ ബ്രാൻഡുകൾ നിർമ്മിക്കുന്നു.</p>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card animate-on-scroll delay-1">
                     <div class="service-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>
                     </div>
@@ -94,7 +94,7 @@
                     <p>കൃത്യമായ ആസൂത്രണവും അതിരില്ലാത്ത സർഗ്ഗാത്മകതയും കൊണ്ട് എല്ലാവരും ഓർക്കുന്ന ഇവന്റുകൾ സൃഷ്ടിക്കുന്നു.</p>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card animate-on-scroll delay-2">
                     <div class="service-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
                     </div>
@@ -312,6 +312,25 @@
             } else {
                 header.classList.remove('scrolled');
             }
+        });
+
+        // Scroll-triggered animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
         });
 
         // Video controls
