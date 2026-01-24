@@ -502,17 +502,22 @@ h1, h2, h3, h4 {
     display: block;
 }
 
-/* Instagram embed section - landscape, centered below */
+/* Instagram embed section - only show on mobile */
 .showcase-instagram {
-    display: flex;
+    display: none;
     justify-content: center;
     padding-top: 40px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.showcase-instagram blockquote {
+.showcase-instagram blockquote,
+.showcase-instagram iframe {
     max-width: 540px !important;
-    min-width: 326px;
+    min-width: 280px;
+}
+
+.showcase-instagram .instagram-media {
+    margin: 0 auto !important;
 }
 
 @media (max-width: 992px) {
@@ -532,6 +537,11 @@ h1, h2, h3, h4 {
 
     .showcase-highlights {
         justify-content: center;
+    }
+
+    /* Show Instagram embed on tablet/mobile */
+    .showcase-instagram {
+        display: flex;
     }
 }
 
