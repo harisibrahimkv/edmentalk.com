@@ -502,34 +502,30 @@ h1, h2, h3, h4 {
     display: block;
 }
 
-/* Instagram embed section - cropped to hide black bars */
-.showcase-instagram {
+/* Landscape reel video section */
+.showcase-reel {
     display: flex;
     justify-content: center;
     padding-top: 40px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.showcase-instagram-inner {
-    width: 500px;
-    height: 320px;
-    overflow: hidden;
-    border-radius: 12px;
+.showcase-reel-wrapper {
     position: relative;
+    width: 100%;
+    max-width: 800px;
 }
 
-.showcase-instagram-inner blockquote,
-.showcase-instagram-inner iframe {
+.showcase-reel-video {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(196, 30, 58, 0.3);
+}
+
+.reel-controls {
     position: absolute;
-    top: -140px;
-    left: 0;
-    width: 500px !important;
-    min-width: 500px !important;
-}
-
-.showcase-instagram-inner .instagram-media {
-    margin: 0 !important;
-    box-shadow: none !important;
+    bottom: 20px;
+    right: 20px;
 }
 
 @media (max-width: 992px) {
@@ -557,20 +553,12 @@ h1, h2, h3, h4 {
         max-width: 260px;
     }
 
-    .showcase-instagram {
+    .showcase-reel {
         padding-top: 30px;
     }
 
-    .showcase-instagram-inner {
-        width: 320px;
-        height: 220px;
-    }
-
-    .showcase-instagram-inner blockquote,
-    .showcase-instagram-inner iframe {
-        top: -100px;
-        width: 320px !important;
-        min-width: 320px !important;
+    .showcase-reel-video {
+        border-radius: 12px;
     }
 }
 
