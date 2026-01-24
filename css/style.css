@@ -258,6 +258,7 @@ h1, h2, h3, h4 {
     top: -50px;
     right: -50px;
     background-image: url('../assets/gallery/award1.jpg');
+    opacity: 0.15;
 }
 
 .circle-2 {
@@ -265,7 +266,8 @@ h1, h2, h3, h4 {
     height: 200px;
     bottom: -30px;
     left: -30px;
-    background-image: url('../assets/gallery/podium.jpg');
+    background-image: url('../assets/gallery/walking.jpg');
+    opacity: 0.15;
 }
 
 .about-content {
@@ -383,6 +385,90 @@ h1, h2, h3, h4 {
     font-size: 0.95rem;
 }
 
+/* Events Showcase Section */
+.events-showcase {
+    padding: 100px 0;
+    background-color: var(--black);
+}
+
+.showcase-header {
+    text-align: center;
+    color: var(--white);
+    margin-bottom: 60px;
+}
+
+.showcase-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.showcase-header p {
+    font-size: 1.1rem;
+    opacity: 0.85;
+    margin-bottom: 25px;
+}
+
+.showcase-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.showcase-highlights span {
+    background-color: var(--red);
+    color: var(--white);
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.showcase-videos {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.showcase-video-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.showcase-video {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(196, 30, 58, 0.3);
+}
+
+.showcase-video-wrapper.instagram-embed {
+    max-width: 350px;
+}
+
+.showcase-video-wrapper.instagram-embed .instagram-media {
+    margin: 0 !important;
+    border-radius: 20px !important;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .showcase-videos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .showcase-video {
+        max-width: 280px;
+    }
+
+    .showcase-video-wrapper.instagram-embed {
+        max-width: 280px;
+    }
+}
+
 /* Approach Section */
 .approach {
     padding: 100px 0;
@@ -400,7 +486,7 @@ h1, h2, h3, h4 {
     background-image: url('../assets/gallery/podium.jpg');
     background-size: cover;
     background-position: center;
-    opacity: 0.06;
+    opacity: 0.12;
     z-index: 0;
 }
 
@@ -475,7 +561,7 @@ h1, h2, h3, h4 {
     background-image: url('../assets/gallery/stage-speaking.jpg');
     background-size: cover;
     background-position: center top;
-    opacity: 0.05;
+    opacity: 0.10;
     z-index: 0;
 }
 
@@ -544,7 +630,7 @@ h1, h2, h3, h4 {
 
 /* Mission Section */
 .mission {
-    padding: 100px 0;
+    padding: 150px 0;
     position: relative;
     color: var(--white);
     overflow: hidden;
@@ -558,7 +644,7 @@ h1, h2, h3, h4 {
     height: 100%;
     background-image: url('../assets/gallery/crowd-event.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: center 35%;
     z-index: 0;
 }
 
@@ -569,7 +655,7 @@ h1, h2, h3, h4 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(196, 30, 58, 0.92) 0%, rgba(160, 24, 48, 0.95) 100%);
+    background: linear-gradient(135deg, rgba(196, 30, 58, 0.75) 0%, rgba(160, 24, 48, 0.78) 100%);
 }
 
 .mission .container {
