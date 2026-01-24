@@ -37,6 +37,33 @@
     }
 }
 
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(196, 30, 58, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 0 15px rgba(196, 30, 58, 0);
+    }
+}
+
+@keyframes videoGlow {
+    0%, 100% {
+        box-shadow: 0 20px 60px rgba(196, 30, 58, 0.3);
+    }
+    50% {
+        box-shadow: 0 20px 80px rgba(196, 30, 58, 0.5);
+    }
+}
+
 /* Scroll-triggered animations */
 .animate-on-scroll {
     opacity: 0;
@@ -52,6 +79,8 @@
 .animate-on-scroll.delay-1 { transition-delay: 0.1s; }
 .animate-on-scroll.delay-2 { transition-delay: 0.2s; }
 .animate-on-scroll.delay-3 { transition-delay: 0.3s; }
+.animate-on-scroll.delay-4 { transition-delay: 0.4s; }
+.animate-on-scroll.delay-5 { transition-delay: 0.5s; }
 
 /* CSS Variables */
 :root {
@@ -171,6 +200,11 @@ h1, h2, h3, h4 {
     height: auto;
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover img {
+    transform: scale(1.08);
 }
 
 .nav ul {
@@ -199,14 +233,16 @@ h1, h2, h3, h4 {
     position: absolute;
     bottom: -5px;
     left: 0;
-    width: 0;
+    width: 100%;
     height: 2px;
     background-color: var(--red);
-    transition: width 0.3s ease;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav a:hover::after {
-    width: 100%;
+    transform: scaleX(1);
 }
 
 /* Language Switcher */
@@ -328,7 +364,7 @@ h1, h2, h3, h4 {
 }
 
 .hero .btn {
-    animation: fadeInUp 1s ease 0.5s forwards;
+    animation: fadeInUp 1s ease 0.5s forwards, pulse 2s ease-in-out 2s infinite;
     opacity: 0;
 }
 
@@ -357,6 +393,7 @@ h1, h2, h3, h4 {
     right: -50px;
     background-image: url('../assets/gallery/award1.jpg');
     opacity: 0.15;
+    animation: float 6s ease-in-out infinite;
 }
 
 .circle-2 {
@@ -366,6 +403,7 @@ h1, h2, h3, h4 {
     left: -30px;
     background-image: url('../assets/gallery/walking.jpg');
     opacity: 0.15;
+    animation: float 8s ease-in-out infinite 1s;
 }
 
 .about-content {
@@ -399,6 +437,15 @@ h1, h2, h3, h4 {
 .about-image img {
     border-radius: 10px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about-image.animate-on-scroll img {
+    transform: translate(-20px, -20px);
+}
+
+.about-image.animate-on-scroll.animated img {
+    transform: translate(0, 0);
 }
 
 .about-image::before {
@@ -547,7 +594,7 @@ h1, h2, h3, h4 {
     max-width: 280px;
     height: auto;
     border-radius: 20px;
-    box-shadow: 0 20px 60px rgba(196, 30, 58, 0.3);
+    animation: videoGlow 3s ease-in-out infinite;
 }
 
 .video-controls {
@@ -624,7 +671,7 @@ h1, h2, h3, h4 {
 .showcase-reel-video {
     width: 100%;
     border-radius: 16px;
-    box-shadow: 0 20px 60px rgba(196, 30, 58, 0.3);
+    animation: videoGlow 3s ease-in-out infinite 1.5s;
 }
 
 .reel-controls {
@@ -846,10 +893,11 @@ h1, h2, h3, h4 {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 120%;
     background-image: url('../assets/gallery/crowd-event.jpg');
     background-size: cover;
     background-position: center 35%;
+    background-attachment: fixed;
     z-index: 0;
 }
 
