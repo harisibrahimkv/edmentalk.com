@@ -6,7 +6,8 @@
     --white: #ffffff;
     --gray-light: #f5f5f5;
     --gray: #666666;
-    --font-family: 'Montserrat', sans-serif;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Lato', sans-serif;
 }
 
 /* Reset */
@@ -21,7 +22,7 @@ html {
 }
 
 body {
-    font-family: var(--font-family);
+    font-family: var(--font-body);
     color: var(--black);
     line-height: 1.6;
     overflow-x: hidden;
@@ -49,6 +50,7 @@ img {
 
 /* Typography */
 h1, h2, h3, h4 {
+    font-family: var(--font-heading);
     font-weight: 700;
     line-height: 1.2;
 }
