@@ -106,11 +106,11 @@ h1, h2, h3, h4 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
+    padding: 10px 20px;
 }
 
 .logo img {
-    width: 200px;
+    width: 140px;
     height: auto;
 }
 
@@ -468,16 +468,8 @@ h1, h2, h3, h4 {
 }
 
 .instagram-wrapper {
-    max-height: 520px;
-    overflow: hidden;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-@media (max-width: 768px) {
-    .instagram-wrapper {
-        max-height: 450px;
-    }
 }
 
 /* Mission Section */
