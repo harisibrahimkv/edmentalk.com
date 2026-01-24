@@ -238,6 +238,34 @@ h1, h2, h3, h4 {
 .about {
     padding: 100px 0;
     background-color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Floating decorative circles */
+.floating-circle {
+    position: absolute;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.08;
+    z-index: 0;
+}
+
+.circle-1 {
+    width: 300px;
+    height: 300px;
+    top: -50px;
+    right: -50px;
+    background-image: url('../assets/gallery/award1.jpg');
+}
+
+.circle-2 {
+    width: 200px;
+    height: 200px;
+    bottom: -30px;
+    left: -30px;
+    background-image: url('../assets/gallery/podium.jpg');
 }
 
 .about-content {
@@ -359,6 +387,26 @@ h1, h2, h3, h4 {
 .approach {
     padding: 100px 0;
     background-color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.approach-bg-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    background-image: url('../assets/gallery/podium.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.06;
+    z-index: 0;
+}
+
+.approach .container {
+    position: relative;
+    z-index: 1;
 }
 
 .approach h2 {
@@ -414,6 +462,26 @@ h1, h2, h3, h4 {
 .why-us {
     padding: 100px 0;
     background-color: var(--gray-light);
+    position: relative;
+    overflow: hidden;
+}
+
+.section-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/gallery/stage-speaking.jpg');
+    background-size: cover;
+    background-position: center top;
+    opacity: 0.05;
+    z-index: 0;
+}
+
+.why-us .container {
+    position: relative;
+    z-index: 1;
 }
 
 .why-us h2 {
@@ -476,9 +544,37 @@ h1, h2, h3, h4 {
 
 /* Mission Section */
 .mission {
-    padding: 80px 0;
-    background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%);
+    padding: 100px 0;
+    position: relative;
     color: var(--white);
+    overflow: hidden;
+}
+
+.mission-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/gallery/crowd-event.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+.mission-bg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(196, 30, 58, 0.92) 0%, rgba(160, 24, 48, 0.95) 100%);
+}
+
+.mission .container {
+    position: relative;
+    z-index: 1;
 }
 
 .mission-content {
@@ -490,11 +586,6 @@ h1, h2, h3, h4 {
 .mission h2 {
     font-size: 2rem;
     margin-bottom: 20px;
-}
-
-.mission .text-red {
-    color: var(--white);
-    opacity: 0.8;
 }
 
 .mission p {
