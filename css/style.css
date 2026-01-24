@@ -431,8 +431,7 @@ h1, h2, h3, h4 {
 }
 
 .showcase-video-wrapper {
-    display: flex;
-    justify-content: center;
+    display: inline-block;
     position: relative;
     flex-shrink: 0;
 }
@@ -533,6 +532,7 @@ h1, h2, h3, h4 {
         grid-template-columns: 1fr;
         gap: 40px;
         text-align: center;
+        justify-items: center;
     }
 
     .showcase-content {
