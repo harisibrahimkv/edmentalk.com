@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(identify:*)",
+      "Bash(convert:*)",
+      "WebFetch(domain:edmentalk.com)",
+      "Bash(ls:*)",
+      "Bash(ffprobe:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
