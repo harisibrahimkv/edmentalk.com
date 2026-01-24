@@ -154,6 +154,39 @@ h1, h2, h3, h4 {
     width: 100%;
 }
 
+/* Language Switcher */
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 30px;
+}
+
+.lang-switcher a {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--white);
+    transition: color 0.3s ease;
+}
+
+.header.scrolled .lang-switcher a {
+    color: var(--black);
+}
+
+.lang-switcher a:hover,
+.lang-switcher a.lang-active {
+    color: var(--red);
+}
+
+.lang-divider {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85rem;
+}
+
+.header.scrolled .lang-divider {
+    color: rgba(0, 0, 0, 0.3);
+}
+
 /* Mobile Menu Button */
 .mobile-menu-btn {
     display: none;
