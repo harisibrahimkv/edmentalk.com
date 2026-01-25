@@ -126,16 +126,7 @@
     <!-- Events Showcase Section -->
     <section class="events-showcase">
         <div class="container">
-            <div class="showcase-main">
-                <div class="showcase-content">
-                    <h2>ഞങ്ങളുടെ <span class="text-red">ഇവന്റുകൾ</span> പ്രവർത്തനത്തിൽ കാണുക</h2>
-                    <p>സ്റ്റാർട്ടപ്പ് ഉച്ചകോടികൾ മുതൽ സാംസ്കാരിക ആഘോഷങ്ങൾ വരെ - ഞങ്ങൾ ആശയങ്ങളെ ജീവിതത്തിലേക്ക് കൊണ്ടുവരുന്നു. എഡ്‌മെൻ ഇവന്റ്സിന്റെ ഊർജ്ജം, സർഗ്ഗാത്മകത, സ്വാധീനം അനുഭവിക്കുക.</p>
-                    <div class="showcase-highlights">
-                        <span>സ്റ്റാർട്ടപ്പുകളും സംരംഭകത്വവും</span>
-                        <span>സാംസ്കാരിക പരിപാടികൾ</span>
-                        <span>ഫുഡ് ഫെസ്റ്റിവലുകൾ</span>
-                    </div>
-                </div>
+            <div class="showcase-main showcase-trio">
                 <div class="showcase-video-wrapper">
                     <video class="showcase-video" id="eventVideo" autoplay muted loop playsinline>
                         <source src="../assets/event-showcase.mp4" type="video/mp4">
@@ -146,6 +137,30 @@
                             <svg class="pause-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
                         </button>
                         <button class="video-btn" id="soundToggle" aria-label="ശബ്ദം ടോഗിൾ ചെയ്യുക">
+                            <svg class="sound-off" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+                            <svg class="sound-on" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="showcase-content">
+                    <h2>ഞങ്ങളുടെ <span class="text-red">ഇവന്റുകൾ</span> പ്രവർത്തനത്തിൽ കാണുക</h2>
+                    <p>സ്റ്റാർട്ടപ്പ് ഉച്ചകോടികൾ മുതൽ സാംസ്കാരിക ആഘോഷങ്ങൾ വരെ - ഞങ്ങൾ ആശയങ്ങളെ ജീവിതത്തിലേക്ക് കൊണ്ടുവരുന്നു. എഡ്‌മെൻ ഇവന്റ്സിന്റെ ഊർജ്ജം, സർഗ്ഗാത്മകത, സ്വാധീനം അനുഭവിക്കുക.</p>
+                    <div class="showcase-highlights">
+                        <span>സ്റ്റാർട്ടപ്പുകളും സംരംഭകത്വവും</span>
+                        <span>സാംസ്കാരിക പരിപാടികൾ</span>
+                        <span>ഫുഡ് ഫെസ്റ്റിവലുകൾ</span>
+                    </div>
+                </div>
+                <div class="showcase-video-wrapper">
+                    <video class="showcase-video" id="benjaliVideo" autoplay muted loop playsinline>
+                        <source src="../assets/benjali.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-controls">
+                        <button class="video-btn" id="benjaliPlayToggle" aria-label="പ്ലേ ടോഗിൾ ചെയ്യുക">
+                            <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            <svg class="pause-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+                        </button>
+                        <button class="video-btn" id="benjaliSoundToggle" aria-label="ശബ്ദം ടോഗിൾ ചെയ്യുക">
                             <svg class="sound-off" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
                             <svg class="sound-on" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
                         </button>
@@ -167,6 +182,35 @@
                             <svg class="sound-on" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
                         </button>
                     </div>
+                </div>
+            </div>
+        </div>
+            <!-- Gallery Slideshow -->
+            <div class="gallery-slideshow">
+                <div class="gallery-track">
+                    <img src="../assets/gallery-events/event-1.jpeg" alt="എഡ്‌മെൻ ഇവന്റ്">
+                    <img src="../assets/gallery-events/event-2.jpeg" alt="എഡ്‌മെൻ ഇവന്റ്">
+                    <img src="../assets/gallery-events/event-3.jpeg" alt="എഡ്‌മെൻ ഇവന്റ്">
+                    <img src="../assets/gallery-events/event-4.jpeg" alt="എഡ്‌മെൻ ഇവന്റ്">
+                    <img src="../assets/gallery-events/event-5.jpeg" alt="എഡ്‌മെൻ ഇവന്റ്">
+                    <img src="../assets/gallery-events/event-6.jpeg" alt="എഡ്‌മെൻ ഇവന്റ്">
+                    <img src="../assets/gallery-events/event-7.jpeg" alt="എഡ്‌മെൻ ഇവന്റ്">
+                    <img src="../assets/gallery-events/event-8.jpeg" alt="എഡ്‌മെൻ ഇവന്റ്">
+                    <img src="../assets/gallery-events/event-9.jpeg" alt="എഡ്‌മെൻ ഇവന്റ്">
+                    <img src="../assets/gallery-events/event-10.jpeg" alt="എഡ്‌മെൻ ഇവന്റ്">
+                    <img src="../assets/gallery-events/event-11.jpeg" alt="എഡ്‌മെൻ ഇവന്റ്">
+                    <!-- Duplicated for seamless loop -->
+                    <img src="../assets/gallery-events/event-1.jpeg" alt="എഡ്‌മെൻ ഇവന്റ്">
+                    <img src="../assets/gallery-events/event-2.jpeg" alt="എഡ്‌മെൻ ഇവന്റ്">
+                    <img src="../assets/gallery-events/event-3.jpeg" alt="എഡ്‌മെൻ ഇവന്റ്">
+                    <img src="../assets/gallery-events/event-4.jpeg" alt="എഡ്‌മെൻ ഇവന്റ്">
+                    <img src="../assets/gallery-events/event-5.jpeg" alt="എഡ്‌മെൻ ഇവന്റ്">
+                    <img src="../assets/gallery-events/event-6.jpeg" alt="എഡ്‌മെൻ ഇവന്റ്">
+                    <img src="../assets/gallery-events/event-7.jpeg" alt="എഡ്‌മെൻ ഇവന്റ്">
+                    <img src="../assets/gallery-events/event-8.jpeg" alt="എഡ്‌മെൻ ഇവന്റ്">
+                    <img src="../assets/gallery-events/event-9.jpeg" alt="എഡ്‌മെൻ ഇവന്റ്">
+                    <img src="../assets/gallery-events/event-10.jpeg" alt="എഡ്‌മെൻ ഇവന്റ്">
+                    <img src="../assets/gallery-events/event-11.jpeg" alt="എഡ്‌മെൻ ഇവന്റ്">
                 </div>
             </div>
         </div>
@@ -289,6 +333,14 @@
         </div>
     </section>
 
+    <!-- Gallery Lightbox -->
+    <div id="galleryLightbox" class="gallery-lightbox">
+        <button id="closeLightbox" class="lightbox-close" aria-label="അടയ്ക്കുക">&times;</button>
+        <button id="lightboxPrev" class="lightbox-nav lightbox-prev" aria-label="മുമ്പത്തേത്">&#10094;</button>
+        <img id="lightboxImg" src="" alt="ഗാലറി ചിത്രം">
+        <button id="lightboxNext" class="lightbox-nav lightbox-next" aria-label="അടുത്തത്">&#10095;</button>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -398,6 +450,93 @@
                 }
             });
         }
+
+        // Benjali video controls
+        const benjaliSoundToggle = document.getElementById('benjaliSoundToggle');
+        const benjaliPlayToggle = document.getElementById('benjaliPlayToggle');
+        const benjaliVideo = document.getElementById('benjaliVideo');
+
+        if (benjaliSoundToggle && benjaliVideo) {
+            benjaliSoundToggle.addEventListener('click', () => {
+                benjaliVideo.muted = !benjaliVideo.muted;
+                benjaliSoundToggle.classList.toggle('unmuted', !benjaliVideo.muted);
+            });
+        }
+
+        if (benjaliPlayToggle && benjaliVideo) {
+            benjaliPlayToggle.addEventListener('click', () => {
+                if (benjaliVideo.paused) {
+                    benjaliVideo.play();
+                    benjaliPlayToggle.classList.remove('paused');
+                } else {
+                    benjaliVideo.pause();
+                    benjaliPlayToggle.classList.add('paused');
+                }
+            });
+        }
+
+        // Gallery slideshow pause on hover
+        const galleryTrack = document.querySelector('.gallery-track');
+        if (galleryTrack) {
+            galleryTrack.addEventListener('mouseenter', () => {
+                galleryTrack.style.animationPlayState = 'paused';
+            });
+            galleryTrack.addEventListener('mouseleave', () => {
+                galleryTrack.style.animationPlayState = 'running';
+            });
+        }
+
+        // Gallery lightbox
+        const lightbox = document.getElementById('galleryLightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const closeLightbox = document.getElementById('closeLightbox');
+        const prevBtn = document.getElementById('lightboxPrev');
+        const nextBtn = document.getElementById('lightboxNext');
+        const galleryImages = document.querySelectorAll('.gallery-track img');
+        let currentImageIndex = 0;
+
+        // Get unique images (first half, before duplicates)
+        const uniqueImageCount = Math.floor(galleryImages.length / 2);
+
+        galleryImages.forEach((img, index) => {
+            img.addEventListener('click', () => {
+                currentImageIndex = index % uniqueImageCount;
+                lightboxImg.src = img.src;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        function closeLightboxFn() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function showImage(index) {
+            if (index < 0) index = uniqueImageCount - 1;
+            if (index >= uniqueImageCount) index = 0;
+            currentImageIndex = index;
+            lightboxImg.src = galleryImages[currentImageIndex].src;
+        }
+
+        if (closeLightbox) closeLightbox.addEventListener('click', closeLightboxFn);
+        if (prevBtn) prevBtn.addEventListener('click', () => showImage(currentImageIndex - 1));
+        if (nextBtn) nextBtn.addEventListener('click', () => showImage(currentImageIndex + 1));
+
+        // Close on backdrop click
+        if (lightbox) {
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightboxFn();
+            });
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightboxFn();
+            if (e.key === 'ArrowLeft') showImage(currentImageIndex - 1);
+            if (e.key === 'ArrowRight') showImage(currentImageIndex + 1);
+        });
     </script>
 </body>
 </html>
