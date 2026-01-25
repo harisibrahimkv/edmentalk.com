@@ -876,7 +876,7 @@ h1, h2, h3, h4 {
     }
 
     .gallery-track {
-        animation: none;
+        animation: none !important;
         padding: 10px 0;
     }
 
@@ -1304,5 +1304,6 @@ h1, h2, h3, h4 {
 
     .gallery-track {
         gap: 12px;
+        animation: none !important;
     }
 }
