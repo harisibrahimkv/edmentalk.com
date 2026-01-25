@@ -127,9 +127,12 @@
         <div class="container">
             <div class="showcase-main showcase-trio">
                 <div class="showcase-video-wrapper">
-                    <video class="showcase-video" id="eventVideo" autoplay muted loop playsinline preload="metadata">
+                    <video class="showcase-video" id="eventVideo" poster="assets/poster-event.jpg" autoplay muted loop playsinline preload="metadata">
                         <source src="assets/event-showcase.mp4" type="video/mp4">
                     </video>
+                    <div class="video-poster-overlay">
+                        <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></div>
+                    </div>
                     <div class="video-controls">
                         <button class="video-btn" id="playToggle" aria-label="Toggle play">
                             <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
@@ -151,9 +154,12 @@
                     </div>
                 </div>
                 <div class="showcase-video-wrapper">
-                    <video class="showcase-video" id="benjaliVideo" autoplay muted loop playsinline preload="metadata">
+                    <video class="showcase-video" id="benjaliVideo" poster="assets/poster-benjali.jpg" autoplay muted loop playsinline preload="metadata">
                         <source src="assets/benjali.mp4" type="video/mp4">
                     </video>
+                    <div class="video-poster-overlay">
+                        <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></div>
+                    </div>
                     <div class="video-controls">
                         <button class="video-btn" id="benjaliPlayToggle" aria-label="Toggle play">
                             <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
@@ -168,9 +174,12 @@
             </div>
             <div class="showcase-reel">
                 <div class="showcase-reel-wrapper">
-                    <video class="showcase-reel-video" id="reelVideo" autoplay muted loop playsinline preload="metadata">
+                    <video class="showcase-reel-video" id="reelVideo" poster="assets/poster-reel.jpg" autoplay muted loop playsinline preload="metadata">
                         <source src="assets/event-reel.mp4" type="video/mp4">
                     </video>
+                    <div class="video-poster-overlay">
+                        <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></div>
+                    </div>
                     <div class="video-controls reel-controls">
                         <button class="video-btn" id="reelPlayToggle" aria-label="Toggle play">
                             <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
@@ -401,6 +410,31 @@
         document.querySelectorAll('.animate-on-scroll').forEach(el => {
             observer.observe(el);
         });
+
+        // Mobile video handling - show poster with tap to play
+        const isMobile = window.innerWidth <= 768;
+        if (isMobile) {
+            const showcaseVideos = document.querySelectorAll('.showcase-video, .showcase-reel-video');
+            const overlays = document.querySelectorAll('.video-poster-overlay');
+
+            // Pause all videos and show overlays on mobile
+            showcaseVideos.forEach(video => {
+                video.pause();
+                video.removeAttribute('autoplay');
+            });
+
+            overlays.forEach(overlay => {
+                overlay.style.display = 'flex';
+                overlay.addEventListener('click', function() {
+                    const wrapper = this.parentElement;
+                    const video = wrapper.querySelector('video');
+                    if (video) {
+                        video.play();
+                        this.style.display = 'none';
+                    }
+                });
+            });
+        }
 
         // Video controls
         const soundToggle = document.getElementById('soundToggle');
