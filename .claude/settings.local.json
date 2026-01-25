@@ -8,7 +8,11 @@
       "Bash(convert:*)",
       "WebFetch(domain:edmentalk.com)",
       "Bash(ls:*)",
-      "Bash(ffprobe:*)"
+      "Bash(ffprobe:*)",
+      "Bash(cat:*)",
+      "Bash(while read n f)",
+      "Bash(do mv \"$f\" \"event-$n.jpeg\")",
+      "Bash(done)"
     ],
     "deny": [],
     "ask": []

@@ -709,6 +709,8 @@ h1, h2, h3, h4 {
     gap: 20px;
     animation: slideGallery 45s linear infinite;
     width: max-content;
+    will-change: transform;
+    backface-visibility: hidden;
 }
 
 .gallery-track img {
