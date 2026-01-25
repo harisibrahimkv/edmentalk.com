@@ -871,6 +871,13 @@ h1, h2, h3, h4 {
 
     .gallery-slideshow {
         margin-top: 40px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .gallery-track {
+        animation: none;
+        padding: 10px 0;
     }
 
     .gallery-track img {
