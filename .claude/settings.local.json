@@ -12,7 +12,8 @@
       "Bash(cat:*)",
       "Bash(while read n f)",
       "Bash(do mv \"$f\" \"event-$n.jpeg\")",
-      "Bash(done)"
+      "Bash(done)",
+      "Bash(ffmpeg:*)"
     ],
     "deny": [],
     "ask": []

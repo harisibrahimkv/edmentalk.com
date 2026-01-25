@@ -411,16 +411,23 @@
             observer.observe(el);
         });
 
-        // Mobile video handling - show poster with tap to play
+        // Mobile video handling - use compressed videos and tap to play
         const isMobile = window.innerWidth <= 768;
         if (isMobile) {
             const showcaseVideos = document.querySelectorAll('.showcase-video, .showcase-reel-video');
             const overlays = document.querySelectorAll('.video-poster-overlay');
 
-            // Pause all videos and show overlays on mobile
+            // Swap to mobile-optimized videos and pause
             showcaseVideos.forEach(video => {
                 video.pause();
                 video.removeAttribute('autoplay');
+                const source = video.querySelector('source');
+                if (source) {
+                    const src = source.getAttribute('src');
+                    const mobileSrc = src.replace('.mp4', '-mobile.mp4');
+                    source.setAttribute('src', mobileSrc);
+                    video.load();
+                }
             });
 
             overlays.forEach(overlay => {
