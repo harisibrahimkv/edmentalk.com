@@ -13,7 +13,8 @@
       "Bash(while read n f)",
       "Bash(do mv \"$f\" \"event-$n.jpeg\")",
       "Bash(done)",
-      "Bash(ffmpeg:*)"
+      "Bash(ffmpeg:*)",
+      "Bash(xdg-open:*)"
     ],
     "deny": [],
     "ask": []
