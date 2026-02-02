@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Edmen Talk</title>
+    <meta name="description" content="Explore Edmen Talk's three core services: Branding, Events, and Education. Building brands, creating memorable events, and empowering through education.">
+    <link rel="canonical" href="https://edmentalk.com/services.html">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/logo-red.png">
+    <style>
+        .services-hero {
+            background: linear-gradient(135deg, #C41E3A 0%, #8B1528 100%);
+            padding: 120px 2rem 80px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .services-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .services-hero p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .service-detail {
+            padding: 80px 2rem;
+        }
+
+        .service-detail:nth-child(even) {
+            background: #f9fafb;
+        }
+
+        .service-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .service-content.reverse {
+            direction: rtl;
+        }
+
+        .service-content.reverse > * {
+            direction: ltr;
+        }
+
+        .service-text h2 {
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .service-text .tagline {
+            color: #C41E3A;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-text p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+
+        .service-text ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 1.5rem;
+        }
+
+        .service-text ul li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #333;
+        }
+
+        .service-text ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #C41E3A;
+            font-weight: bold;
+        }
+
+        .service-visual {
+            background: #C41E3A;
+            height: 400px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 4rem;
+            box-shadow: 0 10px 40px rgba(196, 30, 58, 0.2);
+        }
+
+        .cta-section {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 80px 2rem;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-section .btn {
+            display: inline-block;
+            background: #C41E3A;
+            color: #fff;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+
+        .cta-section .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .services-hero h1 {
+                font-size: 2rem;
+            }
+
+            .service-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .service-content.reverse {
+                direction: ltr;
+            }
+
+            .service-visual {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo-red.png" alt="Edmen Talk Logo">
+            </a>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="index.html#approach">Approach</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="lang-switcher">
+                <a href="services.html" class="lang-active">EN</a>
+                <span class="lang-divider">|</span>
+                <a href="ml/services.html">ML</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="services-hero">
+        <h1>What We Do</h1>
+        <p>Three pillars. One mission. Building brands, creating experiences, and empowering people.</p>
+    </section>
+
+    <!-- Branding Service -->
+    <section class="service-detail">
+        <div class="service-content">
+            <div class="service-text">
+                <div class="tagline">Service 01</div>
+                <h2>Edmen Branding</h2>
+                <p>
+                    In a world saturated with noise, your brand needs to stand out with clarity,
+                    consistency, and conviction. We build brands that don't just exist—they endure.
+                </p>
+                <p>
+                    From strategy to visual identity, we craft brand experiences that resonate with
+                    your audience and reflect your values. Whether you're launching a new venture or
+                    redefining an established presence, we ensure your brand tells the right story.
+                </p>
+                <ul>
+                    <li>Brand strategy & positioning</li>
+                    <li>Visual identity & logo design</li>
+                    <li>Brand guidelines & messaging</li>
+                    <li>Marketing collateral & campaigns</li>
+                </ul>
+            </div>
+            <div class="service-visual">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 120px; height: 120px;"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Service -->
+    <section class="service-detail">
+        <div class="service-content reverse">
+            <div class="service-text">
+                <div class="tagline">Service 02</div>
+                <h2>Edmen Events</h2>
+                <p>
+                    Events are more than gatherings—they're moments that matter. We design and execute
+                    experiences that leave lasting impressions, whether it's a corporate summit, a
+                    cultural celebration, or a product launch.
+                </p>
+                <p>
+                    With meticulous planning and creative execution, we handle everything from concept
+                    to cleanup. Our events don't just happen—they unfold with purpose, precision, and
+                    a touch of magic.
+                </p>
+                <ul>
+                    <li>Corporate events & conferences</li>
+                    <li>Product launches & brand activations</li>
+                    <li>Cultural programs & celebrations</li>
+                    <li>Full event management & coordination</li>
+                </ul>
+            </div>
+            <div class="service-visual">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 120px; height: 120px;"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Service -->
+    <section class="service-detail">
+        <div class="service-content">
+            <div class="service-text">
+                <div class="tagline">Service 03</div>
+                <h2>Edmen Education</h2>
+                <p>
+                    Knowledge is the greatest investment. Through workshops, training programs, and
+                    immersive sessions, we empower individuals and organizations to unlock their potential.
+                </p>
+                <p>
+                    From leadership development to skill enhancement, our educational initiatives are
+                    designed to inspire action, foster growth, and create lasting impact. We don't just
+                    teach—we transform.
+                </p>
+                <ul>
+                    <li>Leadership & personal development workshops</li>
+                    <li>Corporate training programs</li>
+                    <li>Skill development sessions</li>
+                    <li>Customized educational experiences</li>
+                </ul>
+            </div>
+            <div class="service-visual">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 120px; height: 120px;"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Ready to Work Together?</h2>
+        <p>Let's create something remarkable. Get in touch and let's walk the talk.</p>
+        <a href="index.html#contact" class="btn">Get In Touch</a>
+    </section>
+
+    <!-- Footer (reuse from main site or create simple one) -->
+    <footer style="background: #1a1a1a; color: #fff; padding: 2rem; text-align: center;">
+        <p>&copy; 2026 Edmen Talk. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.7;">Come - Let's Walk the Talk</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
