@@ -225,26 +225,269 @@
         .strategy-tm { font-size: 9px; color: var(--edmen-red); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px; display: block; font-weight: 500; }
         .strategy-desc { font-size: 13px; color: var(--gray); line-height: 1.6; }
 
-        /* FOOTER */
-        .page-footer {
+        /* FOOTER (compact, page 2) */
+        .page-footer-compact {
             margin-top: auto;
             background: var(--chocochi-navy);
             color: var(--white);
-            padding: 30px 40px;
-            border-radius: 12px;
+            padding: 14px 30px;
+            border-radius: 10px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .footer-left img { height: 30px; filter: brightness(0) invert(1); margin-bottom: 8px; }
-        .footer-tagline { font-family: 'Playfair Display', serif; font-size: 16px; font-style: italic; color: var(--chocochi-gold); margin-bottom: 5px; }
-        .footer-url { font-size: 12px; opacity: 0.7; }
+        .page-footer-compact img { height: 18px; filter: brightness(0) invert(1); }
+
+        .page-footer-compact .compact-tagline {
+            font-family: 'Playfair Display', serif;
+            font-size: 12px;
+            font-style: italic;
+            color: var(--chocochi-gold);
+        }
+
+        .page-footer-compact a {
+            color: var(--chocochi-gold);
+            text-decoration: none;
+            font-size: 11px;
+        }
+
+        /* PAGE 3: OVERVIEW + FINANCIALS */
+        .overview-page {
+            padding: 40px 50px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .overview-flow {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--gray-light);
+            padding: 22px 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .flow-item { text-align: center; flex: 1; }
+        .flow-icon { font-size: 24px; margin-bottom: 5px; }
+        .flow-name { font-size: 11px; font-weight: 600; color: var(--chocochi-navy); }
+        .flow-sub { font-size: 8px; color: var(--edmen-red); }
+        .flow-arrow { color: var(--chocochi-gold); font-size: 18px; padding: 0 6px; }
+
+        /* Financials */
+        .financials-label {
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--edmen-red);
+            margin-bottom: 5px;
+        }
+
+        .financials-title {
+            font-size: 24px;
+            color: var(--chocochi-navy);
+            margin-bottom: 25px;
+        }
+
+        .fee-card {
+            background: var(--gray-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: stretch;
+            margin-bottom: 18px;
+            overflow: hidden;
+        }
+
+        .fee-info {
+            flex: 1;
+            padding: 22px 25px;
+        }
+
+        .fee-info h3 { font-size: 18px; color: var(--chocochi-navy); margin-bottom: 4px; }
+        .fee-info p { font-size: 12px; color: var(--gray); }
+
+        .fee-original {
+            padding: 22px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-left: 1px solid #e5e5e5;
+        }
+
+        .fee-original span {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: var(--gray);
+            text-decoration: line-through;
+            opacity: 0.5;
+        }
+
+        .fee-amount {
+            padding: 22px 25px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: var(--chocochi-navy);
+            color: var(--white);
+            min-width: 170px;
+        }
+
+        .fee-final {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .fee-note {
+            font-size: 9px;
+            color: var(--chocochi-gold);
+            margin-top: 3px;
+        }
+
+        .includes-section {
+            margin-bottom: 18px;
+        }
+
+        .includes-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--chocochi-navy);
+            margin-bottom: 10px;
+        }
+
+        .includes-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 6px;
+        }
+
+        .includes-item {
+            font-size: 11px;
+            color: var(--gray);
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .includes-item::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--edmen-red);
+            font-weight: 700;
+        }
+
+        .terms-section {
+            background: var(--chocochi-navy);
+            color: var(--white);
+            border-radius: 10px;
+            padding: 18px 22px;
+            margin-bottom: 18px;
+        }
+
+        .terms-title {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--chocochi-gold);
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .terms-list {
+            list-style: none;
+        }
+
+        .terms-list li {
+            font-size: 10px;
+            line-height: 1.6;
+            padding-left: 14px;
+            position: relative;
+            margin-bottom: 3px;
+            opacity: 0.9;
+        }
+
+        .terms-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--chocochi-gold);
+        }
+
+        /* Signature block */
+        .signature-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 18px;
+        }
+
+        .sig-party {
+            padding-top: 10px;
+        }
+
+        .sig-label {
+            font-size: 9px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gray);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .sig-space {
+            height: 45px;
+            display: flex;
+            align-items: flex-end;
+            margin-bottom: 6px;
+        }
+
+        .sig-name {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--chocochi-navy);
+            margin-bottom: 2px;
+        }
+
+        .sig-entity {
+            font-size: 10px;
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .sig-line {
+            border-top: 1px solid #ccc;
+            padding-top: 6px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .sig-line span {
+            font-size: 9px;
+            color: var(--gray);
+        }
+
+        /* Contact footer */
+        .page-footer {
+            margin-top: auto;
+            background: var(--chocochi-navy);
+            color: var(--white);
+            padding: 20px 30px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-left img { height: 24px; filter: brightness(0) invert(1); margin-bottom: 5px; }
+        .footer-tagline { font-family: 'Playfair Display', serif; font-size: 14px; font-style: italic; color: var(--chocochi-gold); margin-bottom: 3px; }
+        .footer-url { font-size: 11px; opacity: 0.7; }
         .footer-url a { color: var(--chocochi-gold); text-decoration: none; }
 
         .footer-right { text-align: right; }
-        .footer-cta { font-family: 'Playfair Display', serif; font-size: 20px; margin-bottom: 5px; }
-        .footer-sub { font-size: 11px; opacity: 0.6; }
+        .footer-cta { font-family: 'Playfair Display', serif; font-size: 16px; margin-bottom: 3px; }
+        .footer-sub { font-size: 10px; opacity: 0.6; }
 
         @media print {
             body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
@@ -266,7 +509,7 @@
 
         <div class="cover-header">
             <img src="assets/logo-white.png" alt="Edmen Talk">
-            <span class="cover-date">February 2026</span>
+            <span class="cover-date">January 30, 2026</span>
         </div>
 
         <div class="cover-main">
@@ -341,14 +584,129 @@
             </div>
         </div>
 
-        <div class="page-footer">
-            <div class="footer-left">
-                <img src="assets/logo-white.png" alt="Edmen Talk">
-                <p class="footer-tagline">"Come - Let's Walk the Talk"</p>
-                <p class="footer-url"><a href="https://edmentalk.com">https://edmentalk.com</a></p>
+        <div class="section-label" style="margin-top:auto;">The Complete Picture</div>
+        <h2 style="font-size:20px;color:#1E2A5E;margin-bottom:15px;">Overview</h2>
+
+        <div class="overview-flow">
+            <div class="flow-item">
+                <div class="flow-icon">⭐</div>
+                <div class="flow-name">Influencers</div>
+                <div class="flow-sub">Digital Reach</div>
             </div>
-            <div class="footer-right">
-                <p class="footer-cta">Let's Create<br>Something Sweet</p>
+            <span class="flow-arrow">+</span>
+            <div class="flow-item">
+                <div class="flow-icon">🤝</div>
+                <div class="flow-name">PRFlow™</div>
+                <div class="flow-sub">Celebrity Power</div>
+            </div>
+            <span class="flow-arrow">+</span>
+            <div class="flow-item">
+                <div class="flow-icon">📍</div>
+                <div class="flow-name">StreetSmart™</div>
+                <div class="flow-sub">Local Buzz</div>
+            </div>
+            <span class="flow-arrow">+</span>
+            <div class="flow-item">
+                <div class="flow-icon">🎭</div>
+                <div class="flow-name">Live Events</div>
+                <div class="flow-sub">Experiences</div>
+            </div>
+            <span class="flow-arrow">=</span>
+            <div class="flow-item">
+                <div class="flow-icon">🚀</div>
+                <div class="flow-name">Launch Success</div>
+                <div class="flow-sub">Feb 12, 2026</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- PAGE 3: FINANCIALS + CONTACT -->
+    <div class="page overview-page">
+        <header class="page-header">
+            <img src="assets/logo-red.png" alt="Edmen Talk">
+            <span style="font-size:11px;color:#666">Chocochi Soft Launch Proposal</span>
+        </header>
+
+        <div class="financials-label">Investment</div>
+        <h2 class="financials-title">Financials</h2>
+
+        <div class="fee-card">
+            <div class="fee-info">
+                <h3>Live Store Launch Package</h3>
+                <p>End-to-end strategy, coordination & campaign management across all four pillars</p>
+            </div>
+            <div class="fee-original">
+                <span>₹50,000</span>
+            </div>
+            <div class="fee-amount">
+                <div class="fee-final">₹45,000</div>
+                <div class="fee-note">10% introductory discount</div>
+            </div>
+        </div>
+
+        <div class="includes-section">
+            <div class="includes-title">What's Included</div>
+            <div class="includes-grid">
+                <div class="includes-item">Campaign strategy & planning</div>
+                <div class="includes-item">Influencer identification & outreach</div>
+                <div class="includes-item">PRFlow™ celebrity coordination</div>
+                <div class="includes-item">Instagram collab management</div>
+                <div class="includes-item">StreetSmart™ local partnerships</div>
+                <div class="includes-item">Live event planning & logistics</div>
+                <div class="includes-item">Content direction & oversight</div>
+                <div class="includes-item">Launch day on-ground coordination</div>
+            </div>
+        </div>
+
+        <div class="terms-section">
+            <div class="terms-title">Terms & Conditions</div>
+            <ul class="terms-list">
+                <li>The service fee covers Edmen Talk's strategy, planning, coordination, and campaign management services only.</li>
+                <li>Influencer fees, if any, shall be paid and settled directly between the influencer(s) and Chocochi. Edmen Talk is not a party to such transactions.</li>
+                <li>Performer and artist fees for live events shall be paid and settled directly between the performer(s) and Chocochi. Edmen Talk is not a party to such transactions.</li>
+                <li>Any third-party costs (venue, equipment, materials, etc.) are borne directly by Chocochi and are not included in the service fee.</li>
+                <li>This proposal is valid for 7 days from the date of issue (January 30, 2026). Pricing and availability are subject to change thereafter.</li>
+                <li>50% advance payment (₹22,500) is due upon signing of this agreement. Work commences only upon receipt of the advance.</li>
+                <li>Remaining 50% (₹22,500) is due on or before the launch date, February 12, 2026.</li>
+                <li>In the event of cancellation by the client after signing, the advance payment is non-refundable as it covers planning and coordination costs already incurred.</li>
+                <li>The scope of work is limited to what is outlined in this proposal. Any additional requirements or services will be quoted separately.</li>
+            </ul>
+        </div>
+
+        <div class="signature-block">
+            <div class="sig-party">
+                <div class="sig-label">For Edmen Talk</div>
+                <div class="sig-space">
+                    <img src="signature.png" alt="Signature" style="height:40px;">
+                </div>
+                <div class="sig-name">Authorized Signatory</div>
+                <div class="sig-entity">Edmen Talk</div>
+                <div class="sig-line">
+                    <span>January 30, 2026</span>
+                </div>
+            </div>
+            <div class="sig-party">
+                <div class="sig-label">For Chocochi</div>
+                <div class="sig-space"></div>
+                <div class="sig-name">Authorized Signatory</div>
+                <div class="sig-entity">Chocochi Pvt Ltd</div>
+                <div class="sig-line">
+                    <span>Signature</span>
+                    <span>Date</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <div>
+                <img src="assets/logo-white.png" alt="Edmen Talk" style="height:22px;filter:brightness(0) invert(1);">
+            </div>
+            <div style="text-align:center;">
+                <p class="footer-tagline">"Come - Let's Walk the Talk"</p>
+            </div>
+            <div style="text-align:right;">
+                <p class="footer-url"><a href="https://edmentalk.com">https://edmentalk.com</a></p>
                 <p class="footer-sub">© 2026 Edmen Talk</p>
             </div>
         </div>
