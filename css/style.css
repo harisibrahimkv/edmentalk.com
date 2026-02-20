@@ -481,7 +481,7 @@ h1, h2, h3, h4 {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
 }
 
@@ -529,13 +529,23 @@ h1, h2, h3, h4 {
 
 .service-card h3 {
     font-size: 1.1rem;
-    margin-bottom: 15px;
+    margin-bottom: 8px;
     color: var(--red);
+}
+
+.service-card h4 {
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+    color: var(--gray);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .service-card p {
     color: var(--gray);
     font-size: 0.95rem;
+    line-height: 1.6;
 }
 
 /* Events Showcase Section */
