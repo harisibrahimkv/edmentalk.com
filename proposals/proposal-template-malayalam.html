@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edmen Talk – Proposal</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@300;400;600;700&family=Noto+Serif+Malayalam:wght@400;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Noto Sans Malayalam', 'Source Sans Pro', Arial, sans-serif;
+            background: #e8e8e8;
+        }
+
+        .page {
+            width: 210mm;
+            margin: 20px auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page.break-after { page-break-after: always; }
+
+        /* ─── COVER PAGE ───────────────────────────────────────── */
+
+        .cover-page {
+            background: white;
+            color: #1a1a1a;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 14mm 16mm 12mm;
+            min-height: 297mm;
+        }
+
+        .cover-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .cover-middle {
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 0;
+        }
+
+        .cover-logo-img { width: 220px; margin-bottom: 44px; }
+
+        .cover-tagline {
+            font-family: 'Source Sans Pro', serif;
+            font-style: italic;
+            font-size: 15px;
+            color: #C41E3A;
+            margin-bottom: 36px;
+        }
+
+        .cover-client-name {
+            font-family: 'Noto Serif Malayalam', serif;
+            font-size: 44px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .cover-bottom {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            border-top: 1px solid #e0e0e0;
+            padding-top: 14px;
+        }
+
+        /* ─── CONTENT PAGES ────────────────────────────────────── */
+
+        .content-page {
+            background: white;
+            padding: 14mm 16mm;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 36px;
+            padding-bottom: 10px;
+            border-bottom: 1.5px solid #C41E3A;
+        }
+
+        .page-logo { height: 22px; width: auto; }
+
+        .page-ref { font-size: 10px; color: #888; }
+
+        /* ─── STRATEGY PAGE ────────────────────────────────────── */
+
+        .section-label {
+            font-size: 9px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 6px;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        .strategy-layout {
+            display: grid;
+            grid-template-columns: 1fr 200px;
+            gap: 24px;
+            margin-bottom: 28px;
+        }
+
+        .strategy-title {
+            font-family: 'Noto Serif Malayalam', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+
+        .strategy-desc { font-size: 12px; line-height: 1.9; color: #444; }
+
+        .goals-box {
+            background: #1a1a1a;
+            color: white;
+            padding: 16px;
+            border-radius: 4px;
+            font-size: 11px;
+            line-height: 1.8;
+        }
+
+        .goals-box-title {
+            font-size: 9px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.55);
+            margin-bottom: 10px;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        .goals-box-item {
+            color: rgba(255,255,255,0.85);
+            padding-left: 14px;
+            position: relative;
+            margin-bottom: 4px;
+            font-size: 11px;
+        }
+
+        .goals-box-item::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #C41E3A;
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: repeat(3, 1fr);
+            gap: 12px;
+            flex: 1;
+        }
+
+        .pillar-card {
+            border: 1px solid #e8e8e8;
+            border-radius: 8px;
+            padding: 20px;
+            background: white;
+        }
+
+        .pillar-card.tinted-green { background: #f4faf4; }
+        .pillar-card.tinted-blue  { background: #f4f6fa; }
+        .pillar-card.tinted-red   { background: #fdf4f4; }
+        .pillar-card.tinted-yellow{ background: #fdfaf0; }
+
+        .pillar-icon { font-size: 20px; margin-bottom: 8px; display: block; }
+
+        .pillar-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 3px;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        .pillar-sublabel {
+            font-size: 9px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 10px;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        .pillar-desc { font-size: 11px; line-height: 1.9; color: #555; }
+
+        /* ─── AGREEMENT PAGES ──────────────────────────────────── */
+
+        .agreement-title {
+            font-family: 'Noto Serif Malayalam', serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .agreement-intro { font-size: 12px; line-height: 1.9; color: #333; margin-bottom: 20px; }
+
+        .info-box {
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            padding: 16px 20px;
+            margin-bottom: 14px;
+            background: #fafafa;
+        }
+
+        .info-box p { margin-bottom: 4px; }
+        .info-box p:last-child { margin-bottom: 0; }
+
+        .and-divider {
+            text-align: center;
+            font-size: 11px;
+            color: #aaa;
+            letter-spacing: 2px;
+            margin: 6px 0;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        .scope-list { margin-bottom: 20px; }
+
+        .scope-item {
+            font-size: 12px;
+            color: #333;
+            padding: 5px 0 5px 20px;
+            position: relative;
+            border-bottom: 1px solid #f0f0f0;
+            line-height: 1.8;
+        }
+
+        .scope-item:last-child { border-bottom: none; }
+
+        .scope-item::before {
+            content: '•';
+            position: absolute;
+            left: 6px;
+            color: #C41E3A;
+            font-weight: 700;
+        }
+
+        /* ─── FINANCIALS ───────────────────────────────────────── */
+
+        h1 {
+            font-family: 'Noto Serif Malayalam', serif;
+            font-size: 28px;
+            color: #1a1a1a;
+            margin-bottom: 24px;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-family: 'Noto Serif Malayalam', serif;
+            font-size: 15px;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            margin-top: 24px;
+            font-weight: 700;
+        }
+
+        h3 {
+            font-size: 11px;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            margin-top: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        p { font-size: 12px; line-height: 1.9; color: #333; margin-bottom: 12px; }
+
+        .package-box {
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 24px;
+        }
+
+        .package-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .package-name {
+            font-family: 'Noto Serif Malayalam', serif;
+            font-size: 15px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .package-name-sub { font-size: 11px; color: #888; margin-top: 2px; }
+
+        .package-price {
+            font-family: 'Source Sans Pro', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #C41E3A;
+        }
+
+        .package-body { padding: 18px 20px; }
+
+        .included-title {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        .included-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 20px; }
+
+        .included-item {
+            font-size: 11px;
+            color: #333;
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+            line-height: 1.7;
+        }
+
+        .included-item::before { content: '✓'; color: #C41E3A; font-weight: 700; flex-shrink: 0; }
+
+        /* ─── SIGNATURE ────────────────────────────────────────── */
+
+        .signature-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 28px;
+        }
+
+        .sig-label {
+            font-size: 9px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 4px;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        .sig-name { font-size: 13px; font-weight: 700; color: #1a1a1a; margin-bottom: 36px; }
+
+        .sig-date-line {
+            border-top: 1px solid #ccc;
+            margin-top: 16px;
+            padding-top: 6px;
+            font-size: 10px;
+            color: #999;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        /* ─── BLANK FILL-IN LINES ──────────────────────────────── */
+
+        .ph {
+            display: inline-block;
+            min-width: 100px;
+            border-bottom: 1px solid #bbb;
+            vertical-align: bottom;
+        }
+
+        /* ─── PAGE FOOTER ──────────────────────────────────────── */
+
+        .page-footer {
+            margin-top: 40px;
+            padding-top: 14px;
+            border-top: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            font-size: 10px;
+            color: #999;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        /* ─── AGREEMENT PAGE COMPACT ───────────────────────────── */
+
+        .agreement-page .page-header { margin-bottom: 22px; }
+        .agreement-page .agreement-title { margin-bottom: 16px; }
+        .agreement-page .agreement-intro { margin-bottom: 12px; }
+        .agreement-page .info-box { margin-bottom: 8px; padding: 10px 16px; }
+        .agreement-page .and-divider { margin: 4px 0; }
+        .agreement-page h2 { margin-top: 14px; margin-bottom: 6px; }
+        .agreement-page p { margin-bottom: 8px; }
+        .agreement-page .scope-item { padding: 3px 0 3px 20px; }
+        .agreement-page .scope-list { margin-bottom: 8px; }
+        .agreement-page .page-footer { margin-top: 18px; }
+
+        /* ─── T&C PAGE COMPACT ─────────────────────────────────── */
+
+        .tc-page .page-header { margin-bottom: 22px; }
+        .tc-page h2 { margin-top: 20px; margin-bottom: 6px; }
+        .tc-page h3 { margin-top: 12px; margin-bottom: 5px; }
+        .tc-page p { margin-bottom: 6px; }
+        .tc-page .signature-section { margin-top: 18px; }
+        .tc-page .page-footer { margin-top: 16px; }
+
+        @media print {
+            body { background: white; }
+            .page { margin: 0; box-shadow: none; }
+            .ph { border-bottom: 1px solid #000; }
+        }
+
+        * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    </style>
+</head>
+<body>
+
+    <!-- ═══════════════════════════════════════════════════════
+         PAGE 1 — COVER
+    ═══════════════════════════════════════════════════════ -->
+    <div class="page cover-page break-after">
+
+        <div class="cover-top">
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="cover-middle">
+            <img src="assets/logo-red.png" alt="Edmen Talk" class="cover-logo-img">
+            <div class="cover-tagline">"Let's Walk the Talk"</div>
+            <div class="cover-client-name"><span class="ph" style="min-width:320px; border-bottom:2px solid #1a1a1a;">&nbsp;</span></div>
+        </div>
+
+        <div class="cover-bottom">
+            <div style="text-align: right; font-size: 10px; color: #999; font-family: 'Source Sans Pro', sans-serif;">
+                <div>https://edmentalk.com</div>
+                <div>© 2026 Edmen Talk</div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+         PAGE 2 — STRATEGY
+    ═══════════════════════════════════════════════════════ -->
+    <div class="page content-page break-after">
+
+        <div class="page-header">
+            <img src="assets/logo-red.png" alt="Edmen Talk" class="page-logo">
+            <div class="page-ref">2</div>
+        </div>
+
+        <div class="section-label">ഞങ്ങളുടെ സമീപനം</div>
+
+        <div class="strategy-layout">
+            <div>
+                <div class="strategy-title">തന്ത്രം</div>
+                <div class="strategy-desc">
+                    ബിസിനസ്സ് ആർക്കിടെക്ചർ, ഇൻഫ്ലുവൻസർ ഔട്ട്‌റീച്ച്, സെലിബ്രിറ്റി പങ്കാളിത്തങ്ങൾ, പ്രാദേശിക സമൂഹ ഇടപഴകൽ, അനുഭവ ഇവന്റുകൾ, തന്ത്രപരമായ മാച്ച്‌മേക്കിംഗ് എന്നിവ സംയോജിപ്പിച്ച് നിങ്ങളുടെ ലോഞ്ചിന്റെ ആഘാതം പരമാവധിയാക്കുന്ന ആറ്-സ്തംഭ സമീപനം.
+                </div>
+            </div>
+            <div class="goals-box">
+                <div class="goals-box-title">നിങ്ങളുടെ ലക്ഷ്യങ്ങൾ</div>
+                <div class="goals-box-item">വിജയകരമായ ലോഞ്ച്</div>
+                <div class="goals-box-item">ബ്രാൻഡ് അവബോധം</div>
+                <div class="goals-box-item">ഓൺലൈൻ &amp; ഓഫ്‌ലൈൻ ഇടപഴകൽ</div>
+                <div class="goals-box-item">വാങ്ങലുകൾ ഉത്തേജിപ്പിക്കൽ</div>
+            </div>
+        </div>
+
+        <div class="pillars-grid">
+            <div class="pillar-card tinted-blue">
+                <span class="pillar-icon">🔗</span>
+                <div class="pillar-title">MatchMaker™</div>
+                <div class="pillar-sublabel">Strategic Partnerships</div>
+                <div class="pillar-desc">
+                    നിങ്ങളുടെ ബ്രാൻഡിനു ചുറ്റും ഒരു ആവാസവ്യവസ്ഥ നിർമ്മിക്കുന്നതിനായി ശരിയായ ബിസിനസ്സുകളെയും സേവനങ്ങളെയും ഒരുമിച്ചു കൊണ്ടുവരുന്നു.
+                </div>
+            </div>
+            <div class="pillar-card tinted-yellow">
+                <span class="pillar-icon">🏛️</span>
+                <div class="pillar-title">Business Architect</div>
+                <div class="pillar-sublabel">Growth Strategy</div>
+                <div class="pillar-desc">
+                    ദീർഘകാല വളർച്ചയ്ക്കുള്ള അടിത്തറ ഇടുന്നതിനായി ബ്രാൻഡ് പൊസിഷനിംഗും നിങ്ങളുടെ സേവനങ്ങൾ എങ്ങനെ അവതരിപ്പിക്കണമെന്നും രൂപപ്പെടുത്തുന്നു.
+                </div>
+            </div>
+            <div class="pillar-card tinted-red">
+                <span class="pillar-icon">📍</span>
+                <div class="pillar-title">StreetSmart™</div>
+                <div class="pillar-sublabel">Local Community</div>
+                <div class="pillar-desc">
+                    അടുത്തുള്ള ബിസിനസ്സ് പങ്കാളിത്തങ്ങൾ, റസിഡന്റ് അസോസിയേഷനുകൾ, കമ്മ്യൂണിറ്റി ഇവന്റുകൾ എന്നിവയിലൂടെ പ്രാദേശിക ആവാസവ്യവസ്ഥ സജീവമാക്കുന്നു.
+                </div>
+            </div>
+            <div class="pillar-card tinted-yellow">
+                <span class="pillar-icon">⭐</span>
+                <div class="pillar-title">Influencer Engagement</div>
+                <div class="pillar-sublabel">Authentic Reach</div>
+                <div class="pillar-desc">
+                    ലോഞ്ചിനു മുൻപുള്ള ടീസറുകൾ, ലോഞ്ച് ദിനത്തിലെ കവറേജ്, ആധികാരിക ബ്രാൻഡ് അനുഭവങ്ങൾ എന്നിവയ്ക്കായി ഓർഗാനിക് ഫോളോവർ ഇൻഫ്ലുവൻസർമാർ.
+                </div>
+            </div>
+            <div class="pillar-card tinted-blue">
+                <span class="pillar-icon">🤝</span>
+                <div class="pillar-title">PRFlow™</div>
+                <div class="pillar-sublabel">Celebrity Collaboration</div>
+                <div class="pillar-desc">
+                    നിങ്ങളുടെ ബ്രാൻഡും അവരുടെ വിശ്വാസ്യതയും ഒരേ സമയം ഉയർത്തുന്ന സെലിബ്രിറ്റി ഫീഡ് ഉള്ളടക്കവും തന്ത്രപരമായ ഇവന്റ് പങ്കാളിത്തങ്ങളും.
+                </div>
+            </div>
+            <div class="pillar-card tinted-green">
+                <span class="pillar-icon">🎭</span>
+                <div class="pillar-title">Live Experiences</div>
+                <div class="pillar-sublabel">On-Site Events</div>
+                <div class="pillar-desc">
+                    ഹാജർ വർദ്ധിപ്പിക്കുകയും ഡിജിറ്റൽ ബസ്സ് സൃഷ്ടിക്കുകയും ചെയ്യുന്ന പ്രകടനങ്ങൾ, തത്സമയ പ്രദർശനങ്ങൾ, ഇൻസ്റ്റഗ്രാം-ഷെയർ ചെയ്യാൻ പ്രേരിപ്പിക്കുന്ന നിമിഷങ്ങൾ.
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>https://edmentalk.com</span>
+            <span>© 2026 Edmen Talk</span>
+        </div>
+
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+         PAGE 3 — AGREEMENT
+    ═══════════════════════════════════════════════════════ -->
+    <div class="page content-page agreement-page break-after">
+
+        <div class="page-header">
+            <img src="assets/logo-red.png" alt="Edmen Talk" class="page-logo">
+            <div class="page-ref">3</div>
+        </div>
+
+        <div class="agreement-title">സേവന കരാർ</div>
+
+        <p class="agreement-intro">
+            ഈ സേവന കരാർ ("കരാർ")
+            <span style="border-bottom: 1px solid #000; display: inline-block; min-width: 140px; padding: 1px 4px;">&nbsp;</span>
+            തീയതിയിൽ ഇനിപ്പറയുന്നവർ തമ്മിൽ ഒപ്പുവെക്കുന്നു:
+        </p>
+
+        <div class="info-box">
+            <p><strong>Edmen Talk</strong> (ഇനി മുതൽ "സേവന ദാതാവ്" എന്ന് വിളിക്കുന്നത്)</p>
+            <p>ഒരു ഇടപഴകൽ തന്ത്ര, നിർവ്വഹണ സ്ഥാപനം</p>
+        </div>
+
+        <div class="and-divider">ഒപ്പം</div>
+
+        <div class="info-box">
+            <p><strong><span class="ph" style="min-width:200px;">&nbsp;</span></strong> (ഇനി മുതൽ "ക്ലയന്റ്" എന്ന് വിളിക്കുന്നത്)</p>
+            <p><span style="border-bottom: 1px solid #ccc; display: inline-block; min-width: 280px; padding: 1px 4px;">&nbsp;</span></p>
+            <p><span style="border-bottom: 1px solid #ccc; display: inline-block; min-width: 280px; padding: 1px 4px;">&nbsp;</span></p>
+        </div>
+
+        <h2>1. ഉദ്ദേശ്യം</h2>
+        <p>ആറ്-സ്തംഭ സമീപനം ഉപയോഗിച്ച് കാമ്പെയിൻ ആഘാതവും ബിസിനസ്സ് വളർച്ചയും പരമാവധിയാക്കുന്നതിനായി, മേൽ നിർവചിച്ചിരിക്കുന്ന ഇടപഴകൽ കാലയളവിൽ ക്ലയന്റിന് സമഗ്രമായ ഇടപഴകൽ തന്ത്ര, നിർവ്വഹണ സേവനങ്ങൾ നൽകാൻ സേവന ദാതാവ് സമ്മതിക്കുന്നു.</p>
+
+        <h2>2. സേവനങ്ങളുടെ വ്യാപ്തി</h2>
+        <p>ഇടപഴകൽ കാലയളവിൽ, സേവന ദാതാവ് ഇനിപ്പറയുന്ന സേവനങ്ങൾ നൽകും:</p>
+
+        <div class="scope-list">
+            <div class="scope-item">കാമ്പെയിൻ സ്ട്രാറ്റജി വികസനവും ആസൂത്രണവും</div>
+            <div class="scope-item">ഇൻഫ്ലുവൻസർ തിരിച്ചറിയൽ, പരിശോധന, ഔട്ട്‌റീച്ച് ഏകോപനം</div>
+            <div class="scope-item">PRFlow™ സെലിബ്രിറ്റി, മീഡിയ വ്യക്തിത്വ പങ്കാളിത്ത ഏകോപനം</div>
+            <div class="scope-item">സോഷ്യൽ മീഡിയ സഹകരണ മാനേജ്‌മെന്റ്</div>
+            <div class="scope-item">StreetSmart™ പ്രാദേശിക ബിസിനസ്സ് പങ്കാളിത്ത വികസനവും നിർവ്വഹണവും</div>
+            <div class="scope-item">അടുത്തുള്ള സ്ഥാപനങ്ങളിലേക്ക് പ്രൊമോഷണൽ മെറ്റീരിയലുകൾ വിതരണം</div>
+            <div class="scope-item">തത്സമയ ഇവന്റ് ആസൂത്രണവും ലോജിസ്റ്റിക്സ് ഏകോപനവും</div>
+            <div class="scope-item">ഉള്ളടക്ക സ്ട്രാറ്റജി ദിശ, മേൽനോട്ടം</div>
+            <div class="scope-item">ഓൺ-ഗ്രൗണ്ട് നിർവ്വഹണവും ദൈനംദിന കാമ്പെയിൻ ഏകോപനവും</div>
+            <div class="scope-item">പതിവ് പുരോഗതി അപ്‌ഡേറ്റുകളും റിപ്പോർട്ടിംഗും</div>
+        </div>
+
+        <div class="page-footer">
+            <span>https://edmentalk.com</span>
+            <span>© 2026 Edmen Talk</span>
+        </div>
+
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+         PAGE 4 — ADVISORY & FINANCIALS
+    ═══════════════════════════════════════════════════════ -->
+    <div class="page content-page break-after">
+
+        <div class="page-header">
+            <img src="assets/logo-red.png" alt="Edmen Talk" class="page-logo">
+            <div class="page-ref">4</div>
+        </div>
+
+        <h2 style="margin-top: 0;">3. ഇടപഴകലിനു ശേഷമുള്ള ഉപദേശക സേവനങ്ങൾ</h2>
+        <p>ഇടപഴകൽ കാലയളവ് പൂർത്തിയായതിനു ശേഷം, മണിക്കൂർ അടിസ്ഥാനത്തിലുള്ള ഉപദേശക കൺസൾട്ടേഷൻ സേവനങ്ങളിലൂടെ സേവന ദാതാവിന്റെ തന്ത്രപരമായ വൈദഗ്ദ്ധ്യത്തിലേക്കുള്ള പ്രവേശനം ക്ലയന്റ് നിലനിർത്തുന്നു. ഫോളോ-അപ്പ് കാമ്പെയിൻ വിശകലനം, ഭാവി ആക്ടിവേഷനുകൾക്കുള്ള തന്ത്രപരമായ ആസൂത്രണം, ആവശ്യാനുസരണം തുടർ മാർക്കറ്റിംഗ് മാർഗ്ഗദർശനം എന്നിവയ്ക്കായി ഈ ഉപദേശക സേവനങ്ങൾ ലഭ്യമാണ്.</p>
+        <p>ഇടപഴകലിനു ശേഷമുള്ള ഉപദേശക സേവനങ്ങൾ കക്ഷികൾ തമ്മിൽ പരസ്പരം സമ്മതിക്കുന്ന നിരക്കുകളിൽ മണിക്കൂർ അടിസ്ഥാനത്തിൽ പ്രത്യേകം ബിൽ ചെയ്യും.</p>
+
+        <div class="section-label" style="margin-top: 28px;">നിക്ഷേപം</div>
+        <h1>സാമ്പത്തിക വിശദാംശങ്ങൾ</h1>
+
+        <div class="package-box">
+            <div class="package-header">
+                <div>
+                    <div class="package-name">ഇടപഴകൽ പാക്കേജ്</div>
+                    <div class="package-name-sub">ആറ് സ്തംഭങ്ങളിലുടനീളം end-to-end സ്ട്രാറ്റജി, ഏകോപനം &amp; കാമ്പെയിൻ മാനേജ്‌മെന്റ്</div>
+                </div>
+                <div style="text-align:right;">
+                    <div style="font-size:11px;color:#888;margin-bottom:6px;font-family:'Source Sans Pro',sans-serif;">ഇടപഴകൽ കാലയളവ്</div>
+                    <div style="font-size:18px;font-weight:700;color:#1a1a1a;margin-bottom:12px;font-family:'Source Sans Pro',sans-serif;"><span class="ph" style="min-width:60px;">&nbsp;</span> ദിവസം</div>
+                    <div style="font-size:11px;color:#888;margin-bottom:6px;font-family:'Source Sans Pro',sans-serif;">മൊത്തം പ്രൊഫഷണൽ ഫീസ്</div>
+                    <div class="package-price"><span class="ph" style="min-width:120px;">&nbsp;</span></div>
+                </div>
+            </div>
+            <div class="package-body">
+                <div class="included-title">ഉൾപ്പെടുന്നവ</div>
+                <div class="included-grid">
+                    <div class="included-item">കാമ്പെയിൻ സ്ട്രാറ്റജി &amp; ആസൂത്രണം</div>
+                    <div class="included-item">ഇൻഫ്ലുവൻസർ തിരിച്ചറിയൽ &amp; ഔട്ട്‌റീച്ച്</div>
+                    <div class="included-item">PRFlow™ സെലിബ്രിറ്റി ഏകോപനം</div>
+                    <div class="included-item">Instagram സഹകരണ മാനേജ്‌മെന്റ്</div>
+                    <div class="included-item">StreetSmart™ പ്രാദേശിക പങ്കാളിത്തങ്ങൾ</div>
+                    <div class="included-item">തത്സമയ ഇവന്റ് ആസൂത്രണം &amp; ലോജിസ്റ്റിക്സ്</div>
+                    <div class="included-item">ഉള്ളടക്ക ദിശ &amp; മേൽനോട്ടം</div>
+                    <div class="included-item">ലോഞ്ച് ദിന ഓൺ-ഗ്രൗണ്ട് ഏകോപനം</div>
+                    <div class="included-item">MatchMaker™ തന്ത്രപരമായ പങ്കാളിത്തങ്ങൾ</div>
+                    <div class="included-item">Business Architect വളർച്ചാ തന്ത്രം</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>https://edmentalk.com</span>
+            <span>© 2026 Edmen Talk</span>
+        </div>
+
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+         PAGE 5 — FEES
+    ═══════════════════════════════════════════════════════ -->
+    <div class="page content-page break-after">
+
+        <div class="page-header">
+            <img src="assets/logo-red.png" alt="Edmen Talk" class="page-logo">
+            <div class="page-ref">5</div>
+        </div>
+
+        <h2 style="margin-top: 0;">4. പ്രൊഫഷണൽ ഫീസും പേയ്മെന്റ് നിബന്ധനകളും</h2>
+
+        <h3>4.1 സേവന ഫീസ്</h3>
+        <p>സെക്ഷൻ 2-ൽ പറഞ്ഞിരിക്കുന്നതുപോലെ ആറ് സ്തംഭങ്ങളിലുടനീളം സ്ട്രാറ്റജി വികസനം, ആസൂത്രണം, ഏകോപനം, കാമ്പെയിൻ മാനേജ്‌മെന്റ് സേവനങ്ങൾ ഉൾക്കൊള്ളുന്ന ഇടപഴകൽ കാലയളവിലെ മൊത്തം പ്രൊഫഷണൽ ഫീസ് ഈ കരാറിലെ സാമ്പത്തിക വിശദാംശ വിഭാഗത്തിൽ നിർവചിച്ചിരിക്കുന്നു.</p>
+
+        <h3>4.2 പേയ്മെന്റ് ഷെഡ്യൂൾ</h3>
+        <div class="scope-list">
+            <div class="scope-item">ഈ കരാർ ഒപ്പുവെക്കുമ്പോൾ മൊത്തം പ്രൊഫഷണൽ ഫീസിന്റെ 50% നൽകേണ്ടതാണ്.</div>
+            <div class="scope-item">ഇടപഴകൽ കാലയളവ് ആരംഭിക്കുന്നതിനു മുൻപ് ബാക്കിയുള്ള 50% നൽകേണ്ടതാണ്.</div>
+            <div class="scope-item">ആദ്യ 50% പേയ്മെന്റ് ലഭിച്ചതിനുശേഷം മാത്രമേ ജോലി ആരംഭിക്കൂ.</div>
+        </div>
+
+        <h3>4.3 സേവന ഫീസിൽ ഉൾപ്പെടാത്തവ</h3>
+        <p>പ്രസ്താവിച്ച പ്രൊഫഷണൽ ഫീസ് സേവന ദാതാവിന്റെ ഏകോപന, മാനേജ്‌മെന്റ് സേവനങ്ങൾ മാത്രമേ ഉൾക്കൊള്ളുന്നുള്ളൂ. ഇനിപ്പറയുന്ന ചെലവുകൾ വ്യക്തമായി ഒഴിവാക്കിയിരിക്കുന്നു, ക്ലയന്റ് അവ നേരിട്ട് വഹിക്കേണ്ടതാണ്:</p>
+        <div class="scope-list">
+            <div class="scope-item">ബാധകമെങ്കിൽ, ഇൻഫ്ലുവൻസർ പ്രതിഫലം, ഫീസ് എന്നിവ</div>
+            <div class="scope-item">പ്രകടനക്കാർ, ആർട്ടിസ്റ്റുകൾ, സെലിബ്രിറ്റികൾ, ടാലന്റ് ഫീസ് എന്നിവ</div>
+            <div class="scope-item">വേദി വാടക, ഉപകരണ വാടക, നിർമ്മാണ ചെലവുകൾ</div>
+            <div class="scope-item">മാർക്കറ്റിംഗ് മെറ്റീരിയലുകൾ, പ്രൊമോഷണൽ ഇനങ്ങൾ, സമ്മാനങ്ങൾ</div>
+            <div class="scope-item">പെർമിറ്റുകൾ, ലൈസൻസുകൾ, റെഗുലേറ്ററി ഫീസ്</div>
+            <div class="scope-item">മറ്റേതെങ്കിലും മൂന്നാം കക്ഷി പ്രവർത്തന ചെലവുകൾ</div>
+        </div>
+        <p>സേവന ദാതാവ് എല്ലാ മൂന്നാം കക്ഷി ഇടപഴകലുകൾക്കും ഏകോപന ശേഷിയിൽ മാത്രം പ്രവർത്തിക്കുന്നു, ക്ലയന്റും മൂന്നാം കക്ഷികളും തമ്മിലുള്ള ഒരു സാമ്പത്തിക ക്രമീകരണത്തിലും കക്ഷിയല്ല.</p>
+
+        <div class="page-footer">
+            <span>https://edmentalk.com</span>
+            <span>© 2026 Edmen Talk</span>
+        </div>
+
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+         PAGE 6 — T&C & EXECUTION
+    ═══════════════════════════════════════════════════════ -->
+    <div class="page content-page tc-page">
+
+        <div class="page-header">
+            <img src="assets/logo-red.png" alt="Edmen Talk" class="page-logo">
+            <div class="page-ref">6</div>
+        </div>
+
+        <h2 style="margin-top: 0;">5. നിബന്ധനകളും വ്യവസ്ഥകളും</h2>
+
+        <h3>5.1 ഇടപഴകൽ കാലയളവ്</h3>
+        <p>ഇടപഴകൽ കാലയളവ് തുടർച്ചയായ ദിവസങ്ങൾ ഉൾക്കൊള്ളുന്നതായിരിക്കും, ആരംഭ, അവസാന തീയതികൾ ആരംഭിക്കുന്നതിനു മുൻപ് എഴുത്തുമൂലം പരസ്പരം സമ്മതിക്കേണ്ടതാണ്.</p>
+
+        <h3>5.2 സാധുത കാലയളവ്</h3>
+        <p>ഈ കരാർ, കരാർ തീയതി മുതൽ ഏഴ് (7) കലണ്ടർ ദിവസത്തേക്ക് സ്വീകാര്യതയ്ക്കായി സാധുവായിരിക്കും. ഈ കാലയളവിനു ശേഷം വിലയും വിഭവ ലഭ്യതയും മാറ്റത്തിന് വിധേയമാണ്.</p>
+
+        <h3>5.3 റദ്ദാക്കൽ നയം</h3>
+        <p>ഈ കരാർ ഒപ്പുവെച്ചതിനു ശേഷം ക്ലയന്റ് റദ്ദാക്കൽ ആരംഭിക്കുന്ന സാഹചര്യത്തിൽ, പ്രതിബദ്ധതയുള്ള ആസൂത്രണം, ഏകോപന വിഭവങ്ങൾ, അവസര ചെലവുകൾ എന്നിവ ഉൾക്കൊള്ളുന്നതിനാൽ ആദ്യ 50% പേയ്മെന്റ് റീഫണ്ട് ചെയ്യാനാവില്ല.</p>
+
+        <h3>5.4 വ്യാപ്തി പരിമിതികൾ</h3>
+        <p>സേവനങ്ങൾ ഈ കരാറിലെ സെക്ഷൻ 2-ൽ വ്യക്തമായി പറഞ്ഞിരിക്കുന്നവയിൽ മാത്രം പരിമിതപ്പെടുത്തിയിരിക്കുന്നു. ക്ലയന്റ് അഭ്യർത്ഥിക്കുന്ന ഏതെങ്കിലും അധിക ആവശ്യകതകളോ സേവനങ്ങളോ വിലയിരുത്തുകയും ഈ കരാറിലേക്കുള്ള അനുബന്ധമായി പ്രത്യേകം ഉദ്ധരിക്കുകയും ചെയ്യും.</p>
+
+        <h3>5.5 ഇടപഴകലിനു ശേഷമുള്ള സേവനങ്ങൾ</h3>
+        <p>സെക്ഷൻ 3-ൽ വിവരിച്ചിരിക്കുന്ന ഇടപഴകലിനു ശേഷമുള്ള ഉപദേശക കൺസൾട്ടേഷൻ സേവനങ്ങൾ ഈ ഇടപഴകലിൽ നിന്ന് പ്രത്യേകം പരസ്പരം സമ്മതിക്കുന്ന നിരക്കുകളിൽ മണിക്കൂർ അടിസ്ഥാനത്തിൽ ലഭ്യമാണ്.</p>
+
+        <h3>5.6 ക്ലയന്റ് സഹകരണ ബാധ്യതകൾ</h3>
+        <p>സേവനങ്ങളുടെ ഡെലിവറി സുഗമമാക്കാൻ സേവന ദാതാവ് ന്യായമായും അഭ്യർത്ഥിക്കുന്ന എല്ലാ വിവരങ്ങൾ, മെറ്റീരിയലുകൾ, ആക്സസ്, സഹകരണം എന്നിവ ക്ലയന്റ് നൽകേണ്ടതാണ്. അത്തരം അഭ്യർത്ഥനകൾ സമയബന്ധിതമായി പാലിക്കുന്നതിൽ പരാജയം ഈ കരാറിന്റെ ലംഘനമായി കണക്കാക്കും, ഇത് ഈടായ ഫീസ് ബാധിക്കാതെ സേവനങ്ങൾ നിർത്തിവെക്കൽ അല്ലെങ്കിൽ അവസാനിപ്പിക്കൽ ആക്കിത്തീർക്കാം.</p>
+
+        <h2 style="margin-top: 28px;">6. നിർവ്വഹണം</h2>
+        <p>ഇരു കക്ഷികളും മുകളിൽ ആദ്യം രേഖപ്പെടുത്തിയ തീയതിയിൽ ഈ കരാർ ഒപ്പുവെച്ചിരിക്കുന്നു.</p>
+
+        <div class="signature-section">
+            <div>
+                <div class="sig-label">സേവന ദാതാവിനായി</div>
+                <div class="sig-name">Edmen Talk</div>
+                <p style="font-size: 11px; color: #666; margin-top: 6px; margin-bottom: 0;">പേരും ഒപ്പും:</p>
+                <div class="sig-date-line">തീയതി:</div>
+            </div>
+            <div>
+                <div class="sig-label">ക്ലയന്റിനായി</div>
+                <div class="sig-name"><span class="ph" style="min-width:200px;">&nbsp;</span></div>
+                <p style="font-size: 11px; color: #666; margin-top: 6px; margin-bottom: 0;">പേരും ഒപ്പും:</p>
+                <div class="sig-date-line">തീയതി:</div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>https://edmentalk.com</span>
+            <span>© 2026 Edmen Talk</span>
+        </div>
+
+    </div>
+
+</body>
+</html>

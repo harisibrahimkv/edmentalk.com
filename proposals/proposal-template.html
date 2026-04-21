@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edmen Talk – Proposal</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Source Sans Pro', Arial, sans-serif;
+            background: #e8e8e8;
+        }
+
+        .page {
+            width: 210mm;
+            margin: 20px auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page.break-after {
+            page-break-after: always;
+        }
+
+        /* ─── COVER PAGE ─────────────────────────────────────────── */
+
+        .cover-page {
+            background: white;
+            color: #1a1a1a;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 14mm 16mm 12mm;
+            min-height: 297mm;
+        }
+
+        .cover-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .cover-date {
+            font-size: 11px;
+            color: #888;
+            letter-spacing: 0.5px;
+        }
+
+        .cover-middle {
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 0;
+        }
+
+        .cover-logo-img {
+            width: 220px;
+            margin-bottom: 44px;
+        }
+
+        .cover-tagline {
+            font-family: 'Libre Baskerville', serif;
+            font-style: italic;
+            font-size: 15px;
+            color: #C41E3A;
+            margin-bottom: 36px;
+        }
+
+        .cover-client-name {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 52px;
+            font-weight: 700;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            line-height: 1.1;
+        }
+
+        .cover-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            border-top: 1px solid #e0e0e0;
+            padding-top: 14px;
+        }
+
+        .cover-address {
+            font-size: 10px;
+            color: #aaa;
+            line-height: 1.7;
+        }
+
+/* ─── CONTENT PAGES ──────────────────────────────────────── */
+
+        .content-page {
+            background: white;
+            padding: 14mm 16mm;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 36px;
+            padding-bottom: 10px;
+            border-bottom: 1.5px solid #C41E3A;
+        }
+
+        .page-logo {
+            height: 22px;
+            width: auto;
+        }
+
+        .page-ref {
+            font-size: 10px;
+            color: #888;
+        }
+
+        /* ─── STRATEGY PAGE ──────────────────────────────────────── */
+
+        .section-label {
+            font-size: 9px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 6px;
+        }
+
+        .strategy-layout {
+            display: grid;
+            grid-template-columns: 1fr 200px;
+            gap: 24px;
+            margin-bottom: 28px;
+        }
+
+        .strategy-title {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+
+        .strategy-desc {
+            font-size: 12px;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .goals-box {
+            background: #1a1a1a;
+            color: white;
+            padding: 16px;
+            border-radius: 4px;
+            font-size: 11px;
+            line-height: 1.8;
+        }
+
+        .goals-box-title {
+            font-size: 9px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.55);
+            margin-bottom: 10px;
+        }
+
+        .goals-box-item {
+            color: rgba(255,255,255,0.85);
+            padding-left: 14px;
+            position: relative;
+            margin-bottom: 4px;
+            font-size: 11px;
+        }
+
+        .goals-box-item::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #C41E3A;
+        }
+
+        /* Pillar cards */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: repeat(3, 1fr);
+            gap: 12px;
+            flex: 1;
+        }
+
+        .pillar-card {
+            border: 1px solid #e8e8e8;
+            border-radius: 8px;
+            padding: 20px;
+            background: white;
+        }
+
+        .pillar-card.tinted-green { background: #f4faf4; }
+        .pillar-card.tinted-blue  { background: #f4f6fa; }
+        .pillar-card.tinted-red   { background: #fdf4f4; }
+        .pillar-card.tinted-yellow{ background: #fdfaf0; }
+
+        .pillar-icon {
+            font-size: 20px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .pillar-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 3px;
+        }
+
+        .pillar-sublabel {
+            font-size: 9px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 10px;
+        }
+
+        .pillar-desc {
+            font-size: 12px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* Overview bar */
+        .overview-section {
+            margin-top: auto;
+        }
+
+        .overview-label {
+            font-size: 9px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 10px;
+        }
+
+        .overview-bar {
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            padding: 14px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .overview-item {
+            text-align: center;
+        }
+
+        .overview-item-icon {
+            font-size: 18px;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .overview-item-name {
+            font-size: 10px;
+            font-weight: 700;
+            color: #1a1a1a;
+            display: block;
+        }
+
+        .overview-item-sub {
+            font-size: 9px;
+            color: #999;
+            display: block;
+        }
+
+        .overview-plus, .overview-eq {
+            font-size: 16px;
+            color: #ccc;
+            font-weight: 300;
+        }
+
+        .overview-result {
+            text-align: center;
+        }
+
+        .overview-result-icon {
+            font-size: 22px;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .overview-result-name {
+            font-size: 11px;
+            font-weight: 700;
+            color: #1a1a1a;
+            display: block;
+        }
+
+        .overview-result-sub {
+            font-size: 9px;
+            color: #C41E3A;
+            display: block;
+        }
+
+        /* ─── AGREEMENT PAGES ───────────────────────────────────── */
+
+        .agreement-title {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .agreement-intro {
+            font-size: 12px;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .info-box {
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            padding: 16px 20px;
+            margin-bottom: 14px;
+            background: #fafafa;
+        }
+
+        .info-box p {
+            margin-bottom: 4px;
+        }
+
+        .info-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .and-divider {
+            text-align: center;
+            font-size: 11px;
+            color: #aaa;
+            letter-spacing: 2px;
+            margin: 6px 0;
+        }
+
+        .key-terms-table {
+            width: 100%;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 24px;
+        }
+
+        .key-terms-table-header {
+            background: #1a1a1a;
+            padding: 8px 16px;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #C41E3A;
+        }
+
+        .key-terms-row {
+            display: flex;
+            padding: 10px 16px;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 12px;
+        }
+
+        .key-terms-row:last-child {
+            border-bottom: none;
+        }
+
+        .key-terms-label {
+            width: 45%;
+            color: #666;
+        }
+
+        .key-terms-value {
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .scope-list {
+            margin-bottom: 20px;
+        }
+
+        .scope-item {
+            font-size: 12px;
+            color: #333;
+            padding: 5px 0 5px 20px;
+            position: relative;
+            border-bottom: 1px solid #f0f0f0;
+            line-height: 1.6;
+        }
+
+        .scope-item:last-child {
+            border-bottom: none;
+        }
+
+        .scope-item::before {
+            content: '•';
+            position: absolute;
+            left: 6px;
+            color: #C41E3A;
+            font-weight: 700;
+        }
+
+        /* ─── FINANCIALS & TERMS PAGE ────────────────────────────── */
+
+        h1 {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 30px;
+            color: #1a1a1a;
+            margin-bottom: 24px;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 16px;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            margin-top: 24px;
+            font-weight: 700;
+        }
+
+        h3 {
+            font-size: 11px;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            margin-top: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        p {
+            font-size: 12px;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 12px;
+        }
+
+        /* Package box */
+        .package-box {
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 24px;
+        }
+
+        .package-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .package-name {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .package-name-sub {
+            font-size: 11px;
+            color: #888;
+            margin-top: 2px;
+        }
+
+        .package-price-wrap {
+            text-align: right;
+        }
+
+        .package-price-original {
+            font-size: 13px;
+            color: #bbb;
+            text-decoration: line-through;
+        }
+
+        .package-price {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #C41E3A;
+        }
+
+        .package-discount {
+            font-size: 10px;
+            color: #A01830;
+            letter-spacing: 0.5px;
+        }
+
+        .package-body {
+            padding: 18px 20px;
+        }
+
+        .included-title {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+
+        .included-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px 20px;
+        }
+
+        .included-item {
+            font-size: 11px;
+            color: #333;
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+        }
+
+        .included-item::before {
+            content: '✓';
+            color: #C41E3A;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* Terms */
+        .terms-box {
+            background: #1a1a1a;
+            border-radius: 6px;
+            padding: 18px 20px;
+            margin-bottom: 24px;
+        }
+
+        .terms-box-title {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #C41E3A;
+            margin-bottom: 12px;
+        }
+
+        .terms-list {
+            list-style: none;
+        }
+
+        .terms-list li {
+            font-size: 10.5px;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.8);
+            padding-left: 14px;
+            position: relative;
+            margin-bottom: 8px;
+        }
+
+        .terms-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #C41E3A;
+        }
+
+        /* Signature */
+        .signature-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 28px;
+        }
+
+        .sig-label {
+            font-size: 9px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 4px;
+        }
+
+        .sig-name {
+            font-size: 13px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 36px;
+        }
+
+        .sig-line {
+            border-top: 1px solid #000;
+            padding-top: 6px;
+            margin-bottom: 16px;
+        }
+
+        .sig-sub {
+            font-size: 10px;
+            color: #666;
+        }
+
+        .sig-date-line {
+            border-top: 1px solid #ccc;
+            margin-top: 16px;
+            padding-top: 6px;
+            font-size: 10px;
+            color: #999;
+        }
+
+        /* ─── T&C PAGE COMPACT OVERRIDES ───────────────────────── */
+        .tc-page .page-header { margin-bottom: 22px; }
+        .tc-page h2 { margin-top: 20px; margin-bottom: 6px; }
+        .tc-page h3 { margin-top: 12px; margin-bottom: 5px; }
+        .tc-page p { margin-bottom: 6px; }
+        .tc-page .signature-section { margin-top: 18px; }
+        .tc-page .page-footer { margin-top: 16px; }
+
+        /* ─── AGREEMENT PAGE COMPACT OVERRIDES ─────────────────── */
+        .agreement-page .page-header { margin-bottom: 22px; }
+        .agreement-page .agreement-title { margin-bottom: 16px; }
+        .agreement-page .agreement-intro { margin-bottom: 12px; }
+        .agreement-page .info-box { margin-bottom: 8px; padding: 10px 16px; }
+        .agreement-page .and-divider { margin: 4px 0; }
+        .agreement-page .key-terms-table { margin-bottom: 16px; }
+        .agreement-page .key-terms-row { padding: 7px 16px; }
+        .agreement-page h2 { margin-top: 14px; margin-bottom: 6px; }
+        .agreement-page p { margin-bottom: 8px; }
+        .agreement-page .scope-item { padding: 3px 0 3px 20px; }
+        .agreement-page .scope-list { margin-bottom: 8px; }
+        .agreement-page .page-footer { margin-top: 18px; }
+
+        /* Blank fill-in lines */
+        .ph {
+            display: inline-block;
+            min-width: 100px;
+            border-bottom: 1px solid #bbb;
+            vertical-align: bottom;
+        }
+
+        /* Page footer */
+        .page-footer {
+            margin-top: 40px;
+            padding-top: 14px;
+            border-top: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            font-size: 10px;
+            color: #999;
+        }
+
+        .page-footer a {
+            color: #C41E3A;
+            text-decoration: none;
+        }
+
+        @media print {
+            body { background: white; }
+            .page { margin: 0; box-shadow: none; }
+            .ph {
+                border-bottom: 1px solid #000;
+            }
+        }
+
+        * {
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ═══════════════════════════════════════════════════════
+         PAGE 1 — COVER
+    ═══════════════════════════════════════════════════════ -->
+    <div class="page cover-page break-after">
+
+        <div class="cover-top">
+            <div></div>
+            <div class="cover-date"></div>
+        </div>
+
+        <div class="cover-middle">
+            <img src="assets/logo-red.png" alt="Edmen Talk" class="cover-logo-img">
+
+            <div class="cover-tagline">"Let's Walk the Talk"</div>
+
+            <div class="cover-client-name"><span class="ph" style="min-width:320px;border-bottom:2px solid #1a1a1a;">&nbsp;</span></div>
+        </div>
+
+        <div class="cover-bottom">
+            <div class="cover-address"></div>
+            <div style="text-align: right; font-size: 10px; color: #999;">
+                <div>https://edmentalk.com</div>
+                <div>© 2026 Edmen Talk</div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+         PAGE 2 — STRATEGY
+    ═══════════════════════════════════════════════════════ -->
+    <div class="page content-page break-after">
+
+        <div class="page-header">
+            <img src="assets/logo-red.png" alt="Edmen Talk" class="page-logo">
+            <div class="page-ref">2</div>
+        </div>
+
+        <div class="section-label">Our Approach</div>
+
+        <div class="strategy-layout">
+            <div>
+                <div class="strategy-title">The Strategy</div>
+                <div class="strategy-desc">
+                    A six-pillar approach combining business architecture, influencer reach,
+                    celebrity partnerships, local community engagement, experiential events,
+                    and strategic matchmaking to maximize your launch impact.
+                </div>
+            </div>
+            <div class="goals-box">
+                <div class="goals-box-title">Your Goals</div>
+                <div class="goals-box-item">Successful launch</div>
+                <div class="goals-box-item">Brand awareness</div>
+                <div class="goals-box-item">Online &amp; offline engagement</div>
+                <div class="goals-box-item">Drive purchases</div>
+            </div>
+        </div>
+
+        <div class="pillars-grid">
+            <div class="pillar-card tinted-blue">
+                <span class="pillar-icon">🔗</span>
+                <div class="pillar-title">MatchMaker™</div>
+                <div class="pillar-sublabel">Strategic Partnerships</div>
+                <div class="pillar-desc">
+                    Bringing in the right businesses and services to fill gaps and build an ecosystem around your brand.
+                </div>
+            </div>
+            <div class="pillar-card tinted-yellow">
+                <span class="pillar-icon">🏛️</span>
+                <div class="pillar-title">Business Architect</div>
+                <div class="pillar-sublabel">Growth Strategy</div>
+                <div class="pillar-desc">
+                    Shaping brand positioning and how your services are portrayed to lay the groundwork for long-term growth.
+                </div>
+            </div>
+            <div class="pillar-card tinted-red">
+                <span class="pillar-icon">📍</span>
+                <div class="pillar-title">StreetSmart™</div>
+                <div class="pillar-sublabel">Local Community</div>
+                <div class="pillar-desc">
+                    Activating the local ecosystem through nearby business partnerships, resident associations, and community events.
+                </div>
+            </div>
+            <div class="pillar-card tinted-yellow">
+                <span class="pillar-icon">⭐</span>
+                <div class="pillar-title">Influencer Engagement</div>
+                <div class="pillar-sublabel">Authentic Reach</div>
+                <div class="pillar-desc">
+                    Organic-follower influencers for pre-launch teasers, launch day coverage, and authentic brand experiences.
+                </div>
+            </div>
+            <div class="pillar-card tinted-blue">
+                <span class="pillar-icon">🤝</span>
+                <div class="pillar-title">PRFlow™</div>
+                <div class="pillar-sublabel">Celebrity Collaboration</div>
+                <div class="pillar-desc">
+                    Content on celebrity feeds and strategic event partnerships that boost your brand and their credibility simultaneously.
+                </div>
+            </div>
+            <div class="pillar-card tinted-green">
+                <span class="pillar-icon">🎭</span>
+                <div class="pillar-title">Live Experiences</div>
+                <div class="pillar-sublabel">On-Site Events</div>
+                <div class="pillar-desc">
+                    Performances, live demonstrations, and Instagram-worthy moments that drive footfall and digital buzz.
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>https://edmentalk.com</span>
+            <span>© 2026 Edmen Talk</span>
+        </div>
+
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+         PAGE 3 — AGREEMENT
+    ═══════════════════════════════════════════════════════ -->
+    <div class="page content-page agreement-page break-after">
+
+        <div class="page-header">
+            <img src="assets/logo-red.png" alt="Edmen Talk" class="page-logo">
+            <div class="page-ref">3</div>
+        </div>
+
+        <div class="agreement-title">SERVICES AGREEMENT</div>
+
+        <p class="agreement-intro">
+            This Engagement Services Agreement ("Agreement") is entered into on
+            <span style="border-bottom: 1px solid #000; display: inline-block; min-width: 140px; padding: 1px 4px;">&nbsp;</span>
+            between:
+        </p>
+
+        <div class="info-box">
+            <p><strong>Edmen Talk</strong> (hereinafter referred to as the "Service Provider")</p>
+            <p>An engagement strategy and execution firm</p>
+        </div>
+
+        <div class="and-divider">AND</div>
+
+        <div class="info-box">
+            <p><strong><span class="ph" style="min-width:200px;">&nbsp;</span></strong> (hereinafter referred to as the "Client")</p>
+            <p><span style="border-bottom: 1px solid #ccc; display: inline-block; min-width: 280px; padding: 1px 4px;">&nbsp;</span></p>
+            <p><span style="border-bottom: 1px solid #ccc; display: inline-block; min-width: 280px; padding: 1px 4px;">&nbsp;</span></p>
+        </div>
+
+        <h2>1. Purpose</h2>
+        <p>The Service Provider agrees to provide comprehensive engagement strategy and execution services to the Client for the Engagement Period defined above, utilizing a six-pillar approach to maximize campaign impact and business growth.</p>
+
+        <h2>2. Scope of Services</h2>
+        <p>During the Engagement Period, the Service Provider will deliver the following services:</p>
+
+        <div class="scope-list">
+            <div class="scope-item">Campaign strategy development and planning</div>
+            <div class="scope-item">Influencer identification, vetting, and outreach coordination</div>
+            <div class="scope-item">PRFlow™ celebrity and media personality partnership coordination</div>
+            <div class="scope-item">Social media collaboration management</div>
+            <div class="scope-item">StreetSmart™ local business partnership development and execution</div>
+            <div class="scope-item">Distribution of promotional materials to neighboring establishments</div>
+            <div class="scope-item">Live event planning and logistics coordination</div>
+            <div class="scope-item">Content strategy direction and oversight</div>
+            <div class="scope-item">On-ground execution and daily campaign coordination</div>
+            <div class="scope-item">Regular progress updates and reporting</div>
+        </div>
+
+        <div class="page-footer">
+            <span>https://edmentalk.com</span>
+            <span>© 2026 Edmen Talk</span>
+        </div>
+
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+         PAGE 4 — ADVISORY & FINANCIALS
+    ═══════════════════════════════════════════════════════ -->
+    <div class="page content-page break-after">
+
+        <div class="page-header">
+            <img src="assets/logo-red.png" alt="Edmen Talk" class="page-logo">
+            <div class="page-ref">4</div>
+        </div>
+
+        <h2 style="margin-top: 0;">3. Post-Engagement Advisory Services</h2>
+        <p>Following the completion of the Engagement Period, the Client retains access to the Service Provider's strategic expertise through hourly advisory consultation services. These advisory services are available for follow-up campaign analysis, strategic planning for future activations, and ongoing marketing guidance on an as-needed basis.</p>
+        <p>Post-engagement advisory services are billed separately on an hourly basis at rates to be mutually agreed upon between the parties.</p>
+
+        <div class="section-label" style="margin-top: 28px;">Investment</div>
+        <h1>Financials</h1>
+
+        <div class="package-box">
+            <div class="package-header">
+                <div>
+                    <div class="package-name">Engagement Package</div>
+                    <div class="package-name-sub">End-to-end strategy, coordination &amp; campaign management across all six pillars</div>
+                </div>
+                <div class="package-price-wrap" style="text-align:right;">
+                    <div style="font-size:11px;color:#888;margin-bottom:6px;">Engagement Period</div>
+                    <div style="font-size:18px;font-weight:700;color:#1a1a1a;margin-bottom:12px;"><span class="ph" style="min-width:60px;">&nbsp;</span> days</div>
+                    <div style="font-size:11px;color:#888;margin-bottom:6px;">Total Professional Fee</div>
+                    <div class="package-price"><span class="ph" style="min-width:120px;">&nbsp;</span></div>
+                </div>
+            </div>
+            <div class="package-body">
+                <div class="included-title">What's Included</div>
+                <div class="included-grid">
+                    <div class="included-item">Campaign strategy &amp; planning</div>
+                    <div class="included-item">Influencer identification &amp; outreach</div>
+                    <div class="included-item">PRFlow™ celebrity coordination</div>
+                    <div class="included-item">Instagram collab management</div>
+                    <div class="included-item">StreetSmart™ local partnerships</div>
+                    <div class="included-item">Live event planning &amp; logistics</div>
+                    <div class="included-item">Content direction &amp; oversight</div>
+                    <div class="included-item">Launch day on-ground coordination</div>
+                    <div class="included-item">MatchMaker™ strategic partnerships</div>
+                    <div class="included-item">Business Architect growth strategy</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>https://edmentalk.com</span>
+            <span>© 2026 Edmen Talk</span>
+        </div>
+
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+         PAGE 5 — FEES, T&C & EXECUTION
+    ═══════════════════════════════════════════════════════ -->
+    <div class="page content-page break-after">
+
+        <div class="page-header">
+            <img src="assets/logo-red.png" alt="Edmen Talk" class="page-logo">
+            <div class="page-ref">5</div>
+        </div>
+
+        <h2 style="margin-top: 0;">4. Professional Fees and Payment Terms</h2>
+
+        <h3>4.1 Service Fees</h3>
+        <p>The Total Professional Fees for the Engagement Period, covering strategy development, planning, coordination, and campaign management services across all six pillars as outlined in Section 2, are defined in the Financials section of this Agreement.</p>
+
+        <h3>4.2 Payment Schedule</h3>
+        <div class="scope-list">
+            <div class="scope-item">50% of the Total Professional Fees is due upon execution of this Agreement.</div>
+            <div class="scope-item">The remaining 50% is due prior to commencement of the Engagement Period.</div>
+            <div class="scope-item">Work shall commence only upon receipt of the initial 50% payment.</div>
+        </div>
+
+        <h3>4.3 Exclusions from Service Fees</h3>
+        <p>The stated professional fees cover only the Service Provider's coordination and management services. The following costs are expressly excluded and shall be borne directly by the Client:</p>
+        <div class="scope-list">
+            <div class="scope-item">All influencer compensation and fees, if applicable</div>
+            <div class="scope-item">All performer, artist, celebrity, and talent fees</div>
+            <div class="scope-item">Venue rental, equipment hire, and production costs</div>
+            <div class="scope-item">Marketing materials, promotional items, and gifts</div>
+            <div class="scope-item">Permits, licenses, and regulatory fees</div>
+            <div class="scope-item">Any other third-party operational expenses</div>
+        </div>
+        <p>The Service Provider acts solely in a coordination capacity for all third-party engagements and is not a party to any financial arrangements between the Client and third parties.</p>
+
+        <div class="page-footer">
+            <span>https://edmentalk.com</span>
+            <span>© 2026 Edmen Talk</span>
+        </div>
+
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+         PAGE 6 — T&C & EXECUTION
+    ═══════════════════════════════════════════════════════ -->
+    <div class="page content-page tc-page">
+
+        <div class="page-header">
+            <img src="assets/logo-red.png" alt="Edmen Talk" class="page-logo">
+            <div class="page-ref">6</div>
+        </div>
+
+        <h2 style="margin-top: 0;">5. Terms and Conditions</h2>
+
+        <h3>5.1 Engagement Period</h3>
+        <p>The Engagement Period shall consist of consecutive days, with specific start and end dates to be mutually agreed upon in writing prior to commencement.</p>
+
+        <h3>5.2 Validity Period</h3>
+        <p>This Agreement remains valid for acceptance for seven (7) calendar days from the date of this Agreement. Pricing and resource availability are subject to change after this period.</p>
+
+        <h3>5.3 Cancellation Policy</h3>
+        <p>In the event of Client-initiated cancellation following execution of this Agreement, the initial 50% payment is non-refundable as it covers committed planning, coordination resources, and opportunity costs.</p>
+
+        <h3>5.4 Scope Limitations</h3>
+        <p>Services are limited to those explicitly outlined in Section 2 of this Agreement. Any additional requirements or services requested by the Client will be assessed and quoted separately as addenda to this Agreement.</p>
+
+        <h3>5.5 Post-Engagement Services</h3>
+        <p>Post-engagement advisory consultation services as described in Section 3 are available on an hourly basis at rates to be mutually agreed upon separately from this engagement.</p>
+
+        <h3>5.6 Client Cooperation Obligations</h3>
+        <p>The Client shall provide all information, materials, access, and cooperation reasonably requested by the Service Provider to facilitate delivery of the services. Failure to comply with such requests in a timely manner shall constitute a violation of this Agreement and may result in suspension or termination of services, without prejudice to any fees already due.</p>
+
+        <h2 style="margin-top: 28px;">6. Execution</h2>
+        <p>The parties hereto have executed this Agreement on the date first written above.</p>
+
+        <div class="signature-section">
+            <div>
+                <div class="sig-label">For the Service Provider</div>
+                <div class="sig-name">Edmen Talk</div>
+                <p style="font-size: 11px; color: #666; margin-top: 6px; margin-bottom: 0;">Name &amp; Signature:</p>
+                <div class="sig-date-line">Date:</div>
+            </div>
+            <div>
+                <div class="sig-label">For the Client</div>
+                <div class="sig-name"><span class="ph" style="min-width:200px;">&nbsp;</span></div>
+                <p style="font-size: 11px; color: #666; margin-top: 6px; margin-bottom: 0;">Name &amp; Signature:</p>
+                <div class="sig-date-line">Date:</div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>https://edmentalk.com</span>
+            <span>© 2026 Edmen Talk</span>
+        </div>
+
+    </div>
+
+</body>
+</html>
