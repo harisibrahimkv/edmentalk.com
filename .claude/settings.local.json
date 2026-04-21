@@ -14,7 +14,21 @@
       "Bash(do mv \"$f\" \"event-$n.jpeg\")",
       "Bash(done)",
       "Bash(ffmpeg:*)",
-      "Bash(xdg-open:*)"
+      "Bash(xdg-open:*)",
+      "Bash(mv:*)",
+      "Bash(node:*)",
+      "Bash(pdfinfo \"Edmen Talk – Proposal.pdf\")",
+      "Bash(python3 -c \"import subprocess; r=subprocess.run\\(['pdfinfo','Edmen Talk – Proposal.pdf'],capture_output=True,text=True\\); print\\(r.stdout\\); print\\(r.stderr\\)\")",
+      "Bash(pdftotext \"Edmen Talk – Proposal.pdf\" -)",
+      "Bash(pdftotext -layout \"Edmen Talk – Proposal.pdf\" /tmp/proposal-check.txt)",
+      "Read(//tmp/**)",
+      "Bash(pdftoppm -r 120 \"Edmen Talk – Proposal.pdf\" /tmp/proposal-page -png)",
+      "Bash(pdftoppm -r 120 \"Edmen Talk – Proposal.pdf\" /tmp/proposal2-page -png)",
+      "Bash(pdftoppm -r 120 \"Edmen Talk – Proposal.pdf\" /tmp/proposal3-page -png -f 1 -l 1)",
+      "Bash(pdftoppm:*)",
+      "Bash(pdfinfo \"Edmen Talk – Proposal \\(Malayalam\\).pdf\")",
+      "Bash(python3 -m http.server 8080)",
+      "Bash(echo \"Server PID: $!\")"
     ],
     "deny": [],
     "ask": []
