@@ -363,8 +363,18 @@ h1, h2, h3, h4 {
     opacity: 0;
 }
 
+.hero-subtagline {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.75);
+    font-style: italic;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    animation: fadeInUp 1s ease 0.45s forwards;
+    opacity: 0;
+}
+
 .hero .btn {
-    animation: fadeInUp 1s ease 0.5s forwards, pulse 2s ease-in-out 2s infinite;
+    animation: fadeInUp 1s ease 0.6s forwards, pulse 2s ease-in-out 2s infinite;
     opacity: 0;
 }
 
@@ -481,7 +491,7 @@ h1, h2, h3, h4 {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
 
@@ -1245,6 +1255,26 @@ h1, h2, h3, h4 {
 .mission p {
     font-size: 1.2rem;
     line-height: 1.8;
+}
+
+/* Book a Call Section */
+.book-section {
+    padding: 100px 0;
+    background-color: var(--gray-light);
+}
+
+.book-section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#cal-embed {
+    margin-top: 40px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    min-height: 600px;
 }
 
 /* Contact Section */
